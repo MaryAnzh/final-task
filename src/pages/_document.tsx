@@ -1,5 +1,8 @@
 import Header from '@/components/common/header/header'
 import { Html, Head, Main, NextScript } from 'next/document'
+import { ThemeProvider } from 'styled-components'
+import { theme } from '@/styles/theme'
+import { GlobalStyle } from '@/styles/global'
 
 export default function Document() {
 
@@ -7,11 +10,14 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body>
-        <Header />
-        <main>
-          <Main />
-        </main>
-        <NextScript />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Header />
+          <main>
+            <Main />
+          </main>
+          <NextScript />
+        </ThemeProvider>
       </body>
     </Html>
   )
