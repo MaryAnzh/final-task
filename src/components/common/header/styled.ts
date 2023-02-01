@@ -1,5 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const HeaderStyled = styled.header`
-  background: pink;
-  `;
+  padding: 20px;
+  color: ${props => props.theme.color};
+  background: red;
+`;

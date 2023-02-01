@@ -23,6 +23,10 @@
   },
   "devDependencies": {
     "@styled-jsx/plugin-sass": "^4.0.2",
+    "@types/styled-components": "^5.1.26",
     "sass": "^1.57.1"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

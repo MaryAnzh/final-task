@@ -8,10 +8,8 @@ export default function Header(props: HeaderProps) {
     const navList = ['about', 'contacts', 'auth'];
     return (
         <HeaderStyled>
-            <header>
-                <Nav navList={navList} />
-            </header>
+            Header
+            <Nav navList={navList} />
         </HeaderStyled>
-
     );
 }
