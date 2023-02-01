@@ -1,3 +1,4 @@
+
 {
   "name": "fanal-task",
   "version": "0.1.0",
@@ -10,23 +11,22 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
+    "axios": "^1.3.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
-    "next": "^13.1.6",
+    "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^5.3.6",
     "typescript": "4.9.5"
   },
   "devDependencies": {
     "@styled-jsx/plugin-sass": "^4.0.2",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
     "@types/styled-components": "^5.1.26",
-    "sass": "^1.57.1",
-    "styled-components": "^5.3.6"
-  },
-  "resolutions": {
-    "styled-components": "^5"
+    "sass": "^1.57.1"
   }
 }

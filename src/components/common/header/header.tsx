@@ -1,17 +1,18 @@
+import { FC } from "react";
 import React from "react";
 import Nav from "@/components/smart/nav/nav";
-import HeaderStyled from "./styled";
+import { HeaderStyled } from "./styled";
 
-type HeaderProps = {}
+type HeaderProps = { className: string };
 
-export default function Header(props: HeaderProps) {
-    const navList = ['about', 'contacts', 'auth'];
+const Header = (props: HeaderProps) => {
+    const navList = ['about', 'contacts', 'authorization'];
     return (
-        <header>
-            <HeaderStyled className="red">
-                <Nav navList={navList} />
-            </HeaderStyled>
-        </header>
-
+        <HeaderStyled className={props.className}>
+            <Nav navList={navList} />
+        </HeaderStyled>
     );
+
 }
+
+export default Header;
