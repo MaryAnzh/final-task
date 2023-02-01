@@ -5,6 +5,7 @@ import { useForm } from "@/hooks/useForm";
 import { FormEvent } from "react";
 import { UserApi } from "@/utils/api";
 import IUser from "@/interfaces/user";
+import checkResponce from "@/utils/checkResponce";
 
 const main_blu_color = 'blue';
 
@@ -16,8 +17,8 @@ const AuthForm = () => {
     try{
       e.preventDefault();
       const res  = await UserApi.register(values);
-      console.log(res);
-      // setValues(initialValue);
+      const user = checkResponce(res);
+      console.log(user);
     } catch(e) {
       console.log(`Регистрация не удалась: ${e}`);
     }
