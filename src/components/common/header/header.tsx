@@ -8,7 +8,7 @@ export default function Header(props: HeaderProps) {
     const navList = ['about', 'contacts', 'auth'];
     return (
         <header>
-            <HeaderStyled>
+            <HeaderStyled className="red">
                 <Nav navList={navList} />
             </HeaderStyled>
         </header>

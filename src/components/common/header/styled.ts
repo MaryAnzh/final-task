@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const HeaderStyled = styled.div`
-  padding: 20px;
+ .red { padding: 20px;
   color: green;
-  background: red;
+  background: red;}
 `;
 
 export default HeaderStyled;

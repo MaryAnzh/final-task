@@ -18,13 +18,13 @@
     "next": "^13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^5.3.6",
     "typescript": "4.9.5"
   },
   "devDependencies": {
     "@styled-jsx/plugin-sass": "^4.0.2",
     "@types/styled-components": "^5.1.26",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "styled-components": "^5.3.6"
   },
   "resolutions": {
     "styled-components": "^5"
