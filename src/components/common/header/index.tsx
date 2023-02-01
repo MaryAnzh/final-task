@@ -1,6 +1,6 @@
 import { FC } from "react";
 import React from "react";
-import Nav from "@/components/smart/nav/nav";
+import Nav from "@/components/smart/nav";
 import { HeaderStyled } from "./styled";
 
 type HeaderProps = { className: string };

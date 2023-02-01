@@ -4,6 +4,6 @@ import { theme } from './theme';
 
 export const GlobalStyle = createGlobalStyle`
 body {
-
+  background-color: ${(props) => props.theme.background};
 }
 `;

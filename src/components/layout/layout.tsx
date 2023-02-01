@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import Header from "../common/header/header"
+import Header from "../common/header"
 
 type DashboardLayoutProps = {
   children: React.ReactNode,

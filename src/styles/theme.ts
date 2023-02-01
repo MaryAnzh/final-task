@@ -2,7 +2,7 @@ import { ITheme, ThemeEnum } from '../interfaces/theme.interface';
 import { DefaultTheme } from 'styled-components';
 
 export const theme: ITheme = {
-    background: 'red',
+    background: 'white',
     color: 'black',
 }
 

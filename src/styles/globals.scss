@@ -28,7 +28,6 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: white;
 }
 
 footer {
@@ -39,7 +38,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+a {
   font-family: 'Readex Pro', sans-serif;
   font-weight: 500;
 }
