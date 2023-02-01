@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
-export const HeaderStyled = styled.header`
+const HeaderStyled = styled.div`
   padding: 20px;
-  color: ${props => props.theme.color};
+  color: green;
   background: red;
 `;
+
+export default HeaderStyled;
