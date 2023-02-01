@@ -7,9 +7,9 @@ type DashboardLayoutProps = {
 
 export const Layout = ({ children }: DashboardLayoutProps) => {
   return (
-    <>
+    <div className="wrapper">
       <Header className="header" />
       <main>{children}</main>
-    </>
+    </div>
   )
 }
