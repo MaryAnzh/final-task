@@ -8,10 +8,11 @@ const instance = axios.create({
 export const UserApi = {
   async register(user: IUser) {
     const data = instance.post('/signup', user);
-    return data
+    return data;
   },
 
   async login(user: IUser) {
     const data = instance.post('/signin', user);
+    return data;
   }
 }
