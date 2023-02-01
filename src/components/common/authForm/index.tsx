@@ -5,7 +5,8 @@ import { useForm } from "@/hooks/useForm";
 import { FormEvent } from "react";
 import { UserApi } from "@/utils/api";
 import IUser from "@/interfaces/user";
-import checkResponce from "@/utils/checkResponce";
+import { setCookie } from "nookies";
+import { AxiosError } from "axios";
 
 const main_blu_color = 'blue';
 
@@ -13,14 +14,32 @@ const AuthForm = () => {
   const initialValue: IUser = { email: "", password: "" };
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
   const { email, password } = values;
-  const handelClick = async (e: FormEvent) => {
+  const clickToSignUpUser = async (e: FormEvent) => {
     try{
       e.preventDefault();
-      const res  = await UserApi.register(values);
-      const user = checkResponce(res);
-      console.log(user);
+      const {token}  = await UserApi.register(values);
+      setCookie(null, 'rtoken', token , {
+        maxAge : 60 * 60 * 2,
+        path: '/'
+      });
+      setValues(initialValue);
     } catch(e) {
-      console.log(`Регистрация не удалась: ${e}`);
+      if( e instanceof AxiosError) {
+         console.log(`Регистрация не удалась: ${e}`);
+      }
+      console.log(`Регистрация не удалась: ${e}`)
+    }
+}
+  const clickToSignInUser = async (e: FormEvent) => {
+    try{
+      e.preventDefault();
+      const { token }  = await UserApi.login(values);
+      setValues(initialValue);
+    } catch(e) {
+      if( e instanceof AxiosError) {
+         console.log(`Вход не удался: ${e}`);
+      }
+      console.log(`Вход не удалася: ${e}`)
     }
 }
   return (
@@ -44,8 +63,8 @@ const AuthForm = () => {
         src={lock.src}
         color={main_blu_color}
       />
-      <Button onClick={handelClick} >Sign In</Button>
-      <Button onClick={handelClick} >Sign Up</Button>
+      <Button onClick={clickToSignUpUser} >Sign In</Button>
+      <Button onClick={clickToSignInUser} >Sign Up</Button>
     </Form>
   );
 };
