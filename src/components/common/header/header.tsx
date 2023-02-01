@@ -5,7 +5,7 @@ import Nav from "@/components/smart/nav/nav";
 type HeaderProps = {}
 
 export default function Header(props: HeaderProps) {
-    const navList = ['about', 'contacts', 'auth'];
+    const navList = ['about', 'contacts', 'authorization'];
     return (
         <header>
             <Nav navList={navList} />

@@ -1,8 +1,10 @@
-import { FC } from "react";
-import styles from "./Authorization.module.scss";
+import { FC} from "react";
+import AuthForm from "@/components/common/authForm";
 
 const Authorization: FC = () => {
-  return <form className={styles.form}>Form Auth</form>;
+  return (
+    <AuthForm/>
+  );
 };
 
 export default Authorization;
