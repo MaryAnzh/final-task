@@ -41,6 +41,9 @@ export interface IThemeColor {
     font: string,
     title: string,
     link: string,
+    logoFill: string,
+    logoStroke: string,
+    logoAccent: string,
 }
 
 export interface ISize {
