@@ -1,6 +1,6 @@
 import { LogoWrap } from "./styled";
 
-export const LogoSVG = () => {
+export const LogoSVG = (): JSX.Element => {
     return (
         <LogoWrap>
             <svg

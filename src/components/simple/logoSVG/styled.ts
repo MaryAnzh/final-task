@@ -10,7 +10,7 @@ cursor: pointer;
     
     .svg-logo {
         fill:none;
-        stroke: ${(props) => props.theme.themeColor.logoStroke};
+        stroke: ${(props) => props.theme.themeColor.header.logoStroke};
         stroke-width:2;
         stroke-linecap:round;
         stroke-linejoin:round;
@@ -18,11 +18,11 @@ cursor: pointer;
     }
 
     .svg-text {
-        fill: ${(props) => props.theme.themeColor.logoFill};
+        fill: ${(props) => props.theme.themeColor.header.logoFill};
     }
 
     circle {
-        fill:  ${(props) => props.theme.themeColor.logoAccent};
+        fill:  ${(props) => props.theme.themeColor.header.logoAccent};
     }
   }
   &:hover {

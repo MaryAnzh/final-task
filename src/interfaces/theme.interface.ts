@@ -1,3 +1,6 @@
+import { IAuthTheme } from "./authTheme";
+import { IHeaderTheme } from "./headerTheme";
+
 export enum ThemeEnum {
     light,
     dark,
@@ -19,6 +22,7 @@ export interface IColor {
     mainLight2: string,
     mainDark: string,
     mainDark2: string,
+    mainExtraLight: string,
     secondary: string,
     secondaryLight: string,
     secondaryLight2: string,
@@ -37,13 +41,12 @@ export interface IColor {
 }
 
 export interface IThemeColor {
+    header: IHeaderTheme,
+    auth: IAuthTheme,
     background: string,
     font: string,
     title: string,
     link: string,
-    logoFill: string,
-    logoStroke: string,
-    logoAccent: string,
 }
 
 export interface ISize {

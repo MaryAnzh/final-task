@@ -7,6 +7,7 @@ const variable: IColor = {
     mainLight2: '#E9F0FE',
     mainDark: '#6D86BB',
     mainDark2: '#495A7D',
+    mainExtraLight: '#F6F9FF',
     secondary: '#5370AC',
     secondaryLight: '#98A9CD',
     secondaryLight2: '#DDE2EF',
@@ -40,9 +41,15 @@ export const theme: ITheme = {
         font: variable.mainDark,
         title: variable.main,
         link: variable.secondary,
-        logoFill: variable.secondary,
-        logoStroke: variable.mainDark2,
-        logoAccent: variable.main,
+        header: {
+            logoFill: variable.secondary,
+            logoStroke: variable.mainDark2,
+            logoAccent: variable.main,
+            loginFill: variable.mainDark,
+            button: variable.main,
+            background: variable.mainExtraLight,
+        }
+
     },
 }
 
