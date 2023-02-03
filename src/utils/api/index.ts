@@ -1,4 +1,4 @@
-import { IRegisterResp, ITokenRes } from "@/interfaces/response";
+import { IRegisterResp, ILoginRes } from "@/interfaces/response";
 import IUser from "@/interfaces/user";
 import axios from "axios";
 
@@ -12,8 +12,8 @@ export const UserApi = {
     return data;
   },
 
-  async login(user: IUser): Promise<ITokenRes> {
-    const { data } = await instance.post<IUser, {data: ITokenRes}>('/signin', user);
+  async login(user: IUser): Promise<ILoginRes> {
+    const { data } = await instance.post<IUser, {data: ILoginRes}>('/signin', user);
     return data;
   },
 
