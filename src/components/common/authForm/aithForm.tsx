@@ -2,7 +2,7 @@ import { Form, Input, Title, Button } from "./styled";
 import postIcon from "../../../icons/post.png";
 import lock from "../../../icons/lock.png";
 import { useForm } from "@/hooks/useForm";
-import { FormEvent } from "react";
+import { FC, FormEvent } from "react";
 import { UserApi } from "@/utils/api";
 import IUser from "@/interfaces/user";
 import { setCookie } from "nookies";
@@ -10,17 +10,17 @@ import { AxiosError } from "axios";
 import { signIn, getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useStore } from "@/context";
-import authConstants from "@/context/conastance";
+import { userFailCreator, userLoginCreator, userRequestCreator } from "@/context/actions";
+import { TStore } from "../../../context/interfaces";
 
 const main_blu_color = "blue";
 
-const AuthForm = () => {
+export const AuthForm: FC = () => {
   const initialValue: IUser = { email: "", password: "" };
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
   const { email, password } = values;
   const router = useRouter();
   const [state, dispatch] = useStore();
-  const { data: user, loading } = state;
 
   const clickToSignUpUser = async (e: FormEvent) => {
     try {
@@ -43,7 +43,7 @@ const AuthForm = () => {
     try {
       e.preventDefault();
 
-      dispatch({ type: authConstants.LOGIN_REQUEST });
+      dispatch(userRequestCreator());
       const { email, password } = values;
       const result = await signIn("credentials", {
         redirect: false,
@@ -52,30 +52,18 @@ const AuthForm = () => {
       });
       if (!result?.error) {
         const session = await getSession();
-        if (session)
-          dispatch({
-            type: authConstants.LOGIN_SUCCESS,
-            payload: session?.user,
-          });
+        if (session) dispatch(userLoginCreator(session?.user as TStore));
         router.replace("/");
       }
       setValues(initialValue);
     } catch (e) {
-      dispatch({
-        type: authConstants.LOGIN_FAILURE,
-        payload: { error: e as string },
-      });
+      dispatch(userFailCreator());
       if (e instanceof AxiosError) {
         console.log(`Вход не удался: ${e}`);
       }
       console.log(`Вход не удалася: ${e}`);
     }
   };
-
-  if(user&&!loading) {
-    router.replace('/');
-    return
-  }
 
   return (
     <Form
@@ -108,4 +96,3 @@ const AuthForm = () => {
   );
 };
 
-export default AuthForm;

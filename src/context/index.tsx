@@ -26,8 +26,10 @@ const reducer = (state: IState, action: IAction) => {
       };
     }
     case authConstants.LOGIN_SUCCESS: {
+      console.log('success')
       return {
         ...state,
+        authorization: true,
         data: {
           ...action.payload,
         },
@@ -37,7 +39,9 @@ const reducer = (state: IState, action: IAction) => {
     case authConstants.LOGIN_FAILURE: {
       return {
         ...state,
+        authorization: false,
         data: { ...action.payload },
+        loading: false,
       };
     }
     default: {

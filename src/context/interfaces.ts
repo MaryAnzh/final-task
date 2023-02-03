@@ -1,24 +1,24 @@
-
 export type TStore = {
-  [key: string|number]: string|null|undefined
+  [key: string | number]: string | null | undefined;
 };
 
 export type Error = {
-  error: string
-}
+  error: string;
+};
 
 export interface IState {
+  authorization: boolean;
   loading: boolean;
-  data: TStore|Error
+  data: TStore | Error;
 }
 
 export const initialState: IState = {
+  authorization: false,
   loading: false,
-  data: {}
- }
+  data: {},
+};
 
 export interface IAction {
-  type: string,
+  type: string;
   payload?: TStore;
 }
-
