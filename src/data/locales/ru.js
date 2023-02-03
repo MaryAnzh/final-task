@@ -1,4 +1,6 @@
 export const ru = {
-    ABOUT: 'О ныс',
-    CONTACTS: 'Контакты'
+    ABOUT: 'О нaс',
+    CONTACTS: 'Контакты',
+    CLICK: 'Клик',
+    LOGIN: 'Вход',
 };

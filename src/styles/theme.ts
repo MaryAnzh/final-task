@@ -48,6 +48,8 @@ export const theme: ITheme = {
             loginFill: variable.mainDark,
             button: variable.main,
             background: variable.mainExtraLight,
+            activeLang: variable.mainDark2,
+            desActiveLang: variable.mainLight,
         }
 
     },

@@ -1,4 +1,6 @@
 export const en = {
-        ABOUT: 'About',
-        CONTACTS: 'Contacts'
+    ABOUT: 'About',
+    CONTACTS: 'Contacts',
+    CLICK: 'Click',
+    LOGIN: 'Login',
 };

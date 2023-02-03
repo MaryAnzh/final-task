@@ -5,4 +5,6 @@ export interface IHeaderTheme {
     loginFill: string,
     button: string,
     background: string,
+    activeLang: string,
+    desActiveLang: string,
 }

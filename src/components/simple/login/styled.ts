@@ -8,11 +8,13 @@ export const LoginStyled = styled.div`
     transition: .3s;
 
       a {
-          color: ${({theme}) => theme.themeColor.link};
+          width: 50px;
+          display: block;
+          color: ${({ theme }) => theme.themeColor.link};
           cursor: pointer;
-        
+
           &:hover {
-              color: ${({theme}) => theme.variable.mainDark2};
+              color: ${({ theme }) => theme.variable.mainDark2};
     }
   }
 `;

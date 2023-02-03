@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 export const AnimationButton = styled.button`
-padding: 5px 10px;
-border: none;
-border-radius: 4px;
-background: ${({theme}) => theme.themeColor.header.button};
-color: #ffffff;
-cursor: pointer;
-text-transform: uppercase;
-transition: .3s;
+    width: 60px;  
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background: ${({theme}) => theme.themeColor.header.button};
+    color: ${({theme}) => theme.variable.mainExtraLight};;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s;
 
 &:hover {
     background: ${({theme}) => theme.variable.mainDark};
