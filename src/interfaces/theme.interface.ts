@@ -1,5 +1,5 @@
-import { IAuthTheme } from "./authTheme";
-import { IHeaderTheme } from "./headerTheme";
+import { IAuthTheme } from './authTheme';
+import { IHeaderTheme } from './headerTheme';
 
 export enum ThemeEnum {
     light,

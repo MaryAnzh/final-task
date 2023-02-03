@@ -1,5 +1,4 @@
-import { ReactNode } from "react"
-import Header from "../common/header"
+import Header from '../common/header'
 
 type DashboardLayoutProps = {
   children: React.ReactNode,
@@ -7,8 +6,8 @@ type DashboardLayoutProps = {
 
 export const Layout = ({ children }: DashboardLayoutProps) => {
   return (
-    <div className="wrapper">
-      <Header className="header" />
+    <div className='wrapper'>
+      <Header className='header' />
       <main>{children}</main>
     </div>
   )

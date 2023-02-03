@@ -1,5 +1,5 @@
 {
-  "name": "fanal-task",
+  "name": "final-task",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@styled-jsx/plugin-sass": "^4.0.2",
+    "@types/styled-components": "^5.1.26",
     "sass": "^1.57.1"
   }
 }
