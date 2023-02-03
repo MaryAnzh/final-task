@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+
 import { RoutingEnum } from '@/data/constants/routing';
 import { LoginWrap } from '@/components/simple/login';
 import { LogoSVG } from '@/components/simple/logoSVG';
@@ -14,6 +15,7 @@ import {
 
 
 export const Header = () => {
+
     return (
         <HeaderStyled>
             <HeaderWrap>
@@ -23,7 +25,15 @@ export const Header = () => {
                     </Link>
                     <Nav />
                 </LeftHeaderWrap>
+                <div>
+                    <Link href="/" locale="en">
+                        En
+                    </Link>
 
+                    <Link href="/" locale="ru">
+                        ru
+                    </Link>
+                </div>
                 <RightHeaderWrap>
                     <AnimationButton>Click</AnimationButton>
                     <LoginWrap />
