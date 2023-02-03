@@ -6,25 +6,25 @@ export const HeaderStyled = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({theme}) => theme.themeColor.header.background};
+  background-color: ${({ theme }) => theme.themeColor.header.background};
+`;
 
-    .header__wrapper {
-      max-width: 1200px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+export const HeaderWrap = styled.div`
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
 
-     &__left {
-     display: flex;
-     align-items: center;
-     }
+export const LeftHeaderWrap = styled.div`
+    display: flex;
+    align-items: center;
+`;
 
-    &__right {
+export const RightHeaderWrap = styled.div`
     width: 260px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-}
 `;

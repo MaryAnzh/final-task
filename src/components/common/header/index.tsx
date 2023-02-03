@@ -1,32 +1,33 @@
 import React from 'react';
-
-import { AnimationButton } from './animationButton/styled';
-import { HeaderStyled } from './styled';
 import Link from 'next/link';
 import { LoginWrap } from '@/components/simple/login';
 import { LogoSVG } from '@/components/simple/logoSVG';
-import Nav from '@/components/smart/nav';
+import { Nav } from '@/components/smart/nav';
+import { AnimationButton } from './animationButton/styled';
+import {
+    HeaderStyled,
+    HeaderWrap,
+    LeftHeaderWrap,
+    RightHeaderWrap
+} from './styled';
 
 
-type HeaderProps = { className: string };
-
-const Header = (props: HeaderProps) => {
-    const navList = ['about', 'contacts'];
+const Header = () => {
     return (
-        <HeaderStyled className={props.className}>
-            <div className='header__wrapper'>
-                <div className='header__wrapper__left'>
+        <HeaderStyled>
+            <HeaderWrap>
+                <LeftHeaderWrap>
                     <Link href='/'>
                         <LogoSVG />
                     </Link>
-                    <Nav navList={navList} />
-                </div>
+                    <Nav />
+                </LeftHeaderWrap>
 
-                <div className='header__wrapper__right'>
+                <RightHeaderWrap>
                     <AnimationButton>Click</AnimationButton>
                     <LoginWrap />
-                </div>
-            </div>
+                </RightHeaderWrap>
+            </HeaderWrap>
         </HeaderStyled>
     );
 }
