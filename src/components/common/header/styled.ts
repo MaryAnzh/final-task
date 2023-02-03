@@ -6,7 +6,7 @@ export const HeaderStyled = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.themeColor.header.background};
+  background-color: ${({theme}) => theme.themeColor.header.background};
 
     .header__wrapper {
       max-width: 1200px;

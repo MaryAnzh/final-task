@@ -8,11 +8,11 @@ export const LoginSVgStyled = styled.div`
     height: 100%;
     
     circle {
-        fill: ${(props => props.theme.themeColor.header.loginFill)};
+        fill: ${(({theme}) => theme.themeColor.header.loginFill)};
     }
 
     path {
-        fill: ${(props => props.theme.themeColor.header.loginFill)};
+        fill: ${(({theme}) => theme.themeColor.header.loginFill)};
     }
   }
 

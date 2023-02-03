@@ -42,7 +42,6 @@ export interface IColor {
 
 export interface IThemeColor {
     header: IHeaderTheme,
-    auth: IAuthTheme,
     background: string,
     font: string,
     title: string,

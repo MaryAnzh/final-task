@@ -8,10 +8,10 @@ align-items: flex-end;
 transition: .3s;
 
   a {
-    color: ${props => props.theme.themeColor.link};
+    color: ${({theme}) => theme.themeColor.link};
     cursor: pointer;
     &:hover {
-      color: ${props => props.theme.variable.mainDark2};
+      color: ${({theme}) => theme.variable.mainDark2};
     }
   }
 
