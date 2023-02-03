@@ -19,23 +19,6 @@ body {
   font-size: 1em;
 }
 
-.wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
-
-main {
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
 footer {
   flex-shrink: 0;
 }
