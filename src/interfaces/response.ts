@@ -4,6 +4,11 @@ export interface IRegisterResp {
   token: string
 }
 
-export interface ITokenRes {
+export interface ILoginRes {
     token: string
+    user: {
+      _id: string,
+      email: string
+    }
   }
+

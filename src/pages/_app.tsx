@@ -5,15 +5,20 @@ import { ThemeProvider } from 'styled-components'
 import { Layout } from '@/components/layout/layout'
 import { lightTheme } from '@/styles/theme'
 import { GlobalStyle } from '@/styles/global'
+import { StoreProvider } from '@/context'
+import { SessionProvider } from 'next-auth/react';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: {session,...pageProps} }: AppProps) {
   return (
     <ThemeProvider theme={lightTheme}>
+    <SessionProvider session={session}>
       <Layout>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <StoreProvider>
+          <Component {...pageProps} />
+            </StoreProvider>
       </Layout>
+      </SessionProvider>
     </ThemeProvider>
-
   )
 }
