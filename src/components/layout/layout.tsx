@@ -12,6 +12,6 @@ export const Layout = ({ children }: PropsWithChildren) => {
       <MainStyled>
         {children}
       </MainStyled>
-   </AppWrapper>
+    </AppWrapper>
   )
 }
