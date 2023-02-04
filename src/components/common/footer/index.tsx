@@ -16,8 +16,16 @@ import {
     SecondRowSocials,
     SecondRowSocial,
     ThirdRow,
-    ThirdRowCopyright
+    ThirdRowCopyright,
+    SecondRowSocialImage,
+    SecondRowRightPart,
+    SecondRowRightPartCol,
+    SecondRowRightPartColTitle,
+
 } from './styled'
+import Link from 'next/link'
+
+const navList = ['about', 'contacts', 'authorization'];
 
 const Footer = (): JSX.Element => (
     <FooterStyled>
@@ -43,23 +51,40 @@ const Footer = (): JSX.Element => (
             <SecondRow>
                 <SecondRowLeftPart>
                     <SecondRowImage
-                        src="/logo.svg"
+                        src="/logo-light.svg"
                         alt="Team Logo"
                         width={59 * 1.5}
                         height={18 * 1.5}
                     />
                     <SecondRowText>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at, debitis ducimus esse iusto
-                        placeat quae quod sint tempora voluptate!
+                        Created by Team of creative &quot;Front-Back&quot; developers as a final task specially for Rolling Scopes Front-End School 2022Q3
                     </SecondRowText>
 
                     <SecondRowSocials>
-
+                        <SecondRowSocial href="https://github.com/MaryAnzh/final-task" target="_blank">
+                            <SecondRowSocialImage src="/github.png" />
+                        </SecondRowSocial>
                     </SecondRowSocials>
-
                 </SecondRowLeftPart>
 
+                <SecondRowRightPart>
+                    <SecondRowRightPartCol>
+                        <SecondRowRightPartColTitle>Quick links</SecondRowRightPartColTitle>
+                        {
+                            navList.map((route: string): JSX.Element => (
+                                <Link href={route} key={route} className="nav-item">{route}</Link>
+                            ))
+                        }
+                    </SecondRowRightPartCol>
+                    <SecondRowRightPartCol>
+                        <SecondRowRightPartColTitle>Service</SecondRowRightPartColTitle>
 
+                    </SecondRowRightPartCol>
+                    <SecondRowRightPartCol>
+                        <SecondRowRightPartColTitle>Contact us</SecondRowRightPartColTitle>
+
+                    </SecondRowRightPartCol>
+                </SecondRowRightPart>
             </SecondRow>
         </FooterContainer>
 
