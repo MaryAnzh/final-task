@@ -11,14 +11,14 @@ import { ru } from '@/data/locales/ru'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    const router = useRouter();
-    const t = router.locale === 'en' ? en : ru;
+  const router = useRouter();
+  const t = router.locale === 'en' ? en : ru;
 
-    return (
-        <>
-            <div>
-                <h2>{t.ABOUT.toUpperCase()}</h2>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div>
+        <h2>{t.ABOUT.toUpperCase()}</h2>
+      </div>
+    </>
+  )
 }
