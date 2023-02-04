@@ -2,7 +2,7 @@ import { Form, Input, Title, Button } from "./styled";
 import postIcon from "../../../icons/post.png";
 import lock from "../../../icons/lock.png";
 import { useForm } from "@/hooks/useForm";
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useEffect } from "react";
 import { UserApi } from "@/utils/api";
 import IUser from "@/interfaces/user";
 import { setCookie } from "nookies";
@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useStore } from "@/context";
 import { userFailCreator, userLoginCreator, userRequestCreator } from "@/context/actions";
 import { TStore } from "../../../context/interfaces";
+import Spinner from "@/components/simple/spinner";
 
 const main_blu_color = "blue";
 
@@ -23,6 +24,9 @@ export const AuthForm: FC = () => {
   const [state, dispatch] = useStore();
 
   const clickToSignUpUser = async (e: FormEvent) => {
+
+    useEffect(() => {}, []);
+
     try {
       e.preventDefault();
 
@@ -65,7 +69,12 @@ export const AuthForm: FC = () => {
     }
   };
 
-  return (
+    if (state.authorization) {
+      router.replace("/");
+      return null
+    }
+
+  return state.loading ? <Spinner/> : (
     <Form
       name={"authForm"}
       color={main_blu_color}
@@ -93,6 +102,6 @@ export const AuthForm: FC = () => {
       <Button onClick={clickToSignUpUser}>Sign Up</Button>
       <Button onClick={clickToSignInUser}>Sign In</Button>
     </Form>
-  );
+  )
 };
 

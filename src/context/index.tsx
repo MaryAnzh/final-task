@@ -26,7 +26,6 @@ const reducer = (state: IState, action: IAction) => {
       };
     }
     case authConstants.LOGIN_SUCCESS: {
-      console.log('success')
       return {
         ...state,
         authorization: true,

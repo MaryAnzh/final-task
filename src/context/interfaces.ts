@@ -14,7 +14,7 @@ export interface IState {
 
 export const initialState: IState = {
   authorization: false,
-  loading: false,
+  loading: true,
   data: {},
 };
 

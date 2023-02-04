@@ -10,33 +10,40 @@ import { Nav } from '@/components/smart/nav';
 import { AnimationButton } from './animationButton/styled';
 import { Locales } from '@/components/smart/locales';
 import {
-    HeaderStyled,
-    HeaderWrap,
-    LeftHeaderWrap,
-    RightHeaderWrap
-} from './styled';
+  HeaderStyled,
+  HeaderWrap,
+  LeftHeaderWrap,
+  RightHeaderWrap,
+} from "./styled";
+import { useStore } from "@/context";
+import LoginOut from "@/components/simple/loginout";
 
 export const Header = () => {
+  const [state] = useStore();
     const router = useRouter();
     const t = router.locale === 'en' ? en : ru;
-    return (
-        <HeaderStyled>
-            <HeaderWrap>
-                <LeftHeaderWrap>
-                    <Link href={RoutingEnum.about}>
-                        <LogoSVG />
-                    </Link>
-                    <Nav />
-                </LeftHeaderWrap>
+  return (
+    <HeaderStyled>
+      <HeaderWrap>
+        <LeftHeaderWrap>
+          <Link href={RoutingEnum.about}>
+            <LogoSVG />
+          </Link>
+          <Nav />
+        </LeftHeaderWrap>
 
-                <RightHeaderWrap>
-                    <AnimationButton>
+        <RightHeaderWrap>
+            <AnimationButton>
                         {t.CLICK}
                     </AnimationButton>
-                    <LoginWrap text={t.LOGIN}/>
+          {state.authorization ? (
+            <LoginOut/>
+          ) : (
+            <LoginWrap text={t.LOGIN}/>
                     <Locales />
-                </RightHeaderWrap>
-            </HeaderWrap>
-        </HeaderStyled>
-    );
-}
+          )}
+        </RightHeaderWrap>
+      </HeaderWrap>
+    </HeaderStyled>
+  );
+};
