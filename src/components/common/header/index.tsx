@@ -1,26 +1,42 @@
-import React from "react";
-import Nav from "@/components/smart/nav";
-import { HeaderStyled } from "./styled";
-import Image from 'next/image'
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { en } from '../../../data/locales/en'
+import { ru } from '../../../data/locales/ru'
+import { RoutingEnum } from '@/data/constants/routing';
+import { LoginWrap } from '@/components/simple/login';
+import { LogoSVG } from '@/components/simple/logoSVG';
+import { Nav } from '@/components/smart/nav';
+import { AnimationButton } from './animationButton/styled';
+import { Locales } from '@/components/smart/locales';
+import {
+    HeaderStyled,
+    HeaderWrap,
+    LeftHeaderWrap,
+    RightHeaderWrap
+} from './styled';
 
-type HeaderProps = { className: string };
-
-const Header = (props: HeaderProps) => {
-    const navList = ['about', 'contacts', 'authorization'];
+export const Header = () => {
+    const router = useRouter();
+    const t = router.locale === 'en' ? en : ru;
     return (
-        <HeaderStyled className={props.className}>
-            <Image
-                className="logo-svg"
-                src="/logo.svg"
-                alt="Team Logo"
-                width={59*1.5}
-                height={18*1.5}
-                priority
-            />
-            <Nav navList={navList} />
+        <HeaderStyled>
+            <HeaderWrap>
+                <LeftHeaderWrap>
+                    <Link href={RoutingEnum.about}>
+                        <LogoSVG />
+                    </Link>
+                    <Nav />
+                </LeftHeaderWrap>
+
+                <RightHeaderWrap>
+                    <AnimationButton>
+                        {t.CLICK}
+                    </AnimationButton>
+                    <LoginWrap text={t.LOGIN}/>
+                    <Locales />
+                </RightHeaderWrap>
+            </HeaderWrap>
         </HeaderStyled>
     );
-
 }
-
-export default Header;

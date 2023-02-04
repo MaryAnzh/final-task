@@ -1,28 +1,34 @@
-import React from "react";
-import Link from "next/link";
-import { NavStyled } from "./styled";
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { en } from '../../../data/locales/en'
+import { ru } from '../../../data/locales/ru'
 
-type NavProps = {
-    navList: string[]
-}
+import { navList } from '@/data/constants/navList';
+import { RoutingEnum } from '@/data/constants/routing';
+import { NavStyled } from './styled';
 
-export default function Nav(props: NavProps) {
-    const navList = props.navList.map(name => {
-        const href = name === 'about' ? '/' : `/${name}`;
+export function Nav() {
+    const router = useRouter();
+    const t = router.locale === 'en' ? en : ru;
+    const list = navList.map(name => {
+        const href = name === 'about' ? RoutingEnum.about : RoutingEnum.contacts;
+        const trName = name === 'about' ? t.ABOUT: t.CONTACTS;
+
         return (
             <li
-            className="nav-item"
-            key={name}>
+                className='nav-item'
+                key={name}>
                 <Link
-                className="nav-item__link"
-                href={href}>{name}</Link>
+                    className='nav-item__link'
+                    href={href}>{trName}</Link>
             </li>
         );
     });
-    
+
     return (
         <NavStyled>
-            {navList}
+            { list }
         </NavStyled>
     );
 }

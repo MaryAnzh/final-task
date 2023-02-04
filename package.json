@@ -1,5 +1,5 @@
 {
-  "name": "fanal-task",
+  "name": "final-task",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -16,14 +16,18 @@
     "@types/styled-components": "^5.1.26",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "i18next": "^22.4.9",
     "next": "13.1.6",
+    "next-i18next": "^13.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^12.1.5",
     "styled-components": "^5.3.6",
     "typescript": "4.9.5"
   },
   "devDependencies": {
     "@styled-jsx/plugin-sass": "^4.0.2",
+    "@types/styled-components": "^5.1.26",
     "sass": "^1.57.1"
   }
 }
