@@ -8,10 +8,10 @@ import {
 export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <AppWrapper>
-    <Header />
-    <MainStyled>
-      {children}
-    </MainStyled>
+      <Header />
+      <MainStyled>
+        {children}
+      </MainStyled>
    </AppWrapper>
   )
 }
