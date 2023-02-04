@@ -1,17 +1,17 @@
-import { ReactNode } from "react"
-import Header from "../common/header"
-import Footer from '@/components/common/footer'
+import React, { PropsWithChildren } from 'react';
+import { Header } from '../common/header'
+import {
+    AppWrapper,
+    MainStyled
+} from './styled';
 
-type DashboardLayoutProps = {
-  children: React.ReactNode,
-};
-
-export const Layout = ({ children }: DashboardLayoutProps) => {
-  return (
-    <div className="wrapper">
-      <Header className="header" />
-      <main>{children}</main>
-        <Footer/>
-    </div>
-  )
+export const Layout = ({ children }: PropsWithChildren) => {
+    return (
+        <AppWrapper>
+            <Header />
+            <MainStyled>
+                {children}
+            </MainStyled>
+        </AppWrapper>
+    )
 }

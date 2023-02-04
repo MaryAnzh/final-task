@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import {
     FooterStyled,
     FooterContainer,
@@ -23,7 +24,7 @@ import {
     SecondRowRightPartColTitle,
 
 } from './styled'
-import Link from 'next/link'
+
 
 const navList = ['about', 'contacts', 'authorization'];
 
