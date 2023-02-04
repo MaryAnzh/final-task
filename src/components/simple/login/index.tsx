@@ -1,12 +1,13 @@
-import Image from 'next/image';
 import Link from 'next/link'
 import { LoginSVG } from '../loginSVG';
-import { LoginStyled } from './styled';
+import {
+    LoginStyled
+} from './styled';
 
-export const LoginWrap = () => {
+export const LoginWrap = (props: {text: string}) => {
     return (
         <LoginStyled>
-            <Link href='/auth'>Login</Link>
+            <Link href='/auth'>{props.text}</Link>
             <LoginSVG />
         </LoginStyled>
     );
