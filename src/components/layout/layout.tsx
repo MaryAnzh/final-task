@@ -11,8 +11,8 @@ export const Layout = ({ children }: PropsWithChildren) => {
   const { data: user, loading, authorization } = state;
 
   useEffect(() => {
-    dispatch({ type: authConstants.LOGIN_REQUEST });
     if (!authorization) {
+      dispatch({ type: authConstants.LOGIN_REQUEST });
       getSession().then((session) => {
         if (session) {
           dispatch({

@@ -1,5 +1,5 @@
-import authConstants from "./conastance";
-import { TStore } from "./interfaces";
+import authConstants from './conastance';
+import { TStore } from './interfaces';
 
 export const userRequestCreator = () => {
   return {
@@ -10,7 +10,7 @@ export const userRequestCreator = () => {
 export const userLoginCreator = (user: TStore) => {
   return {
     type: authConstants.LOGIN_SUCCESS,
-    payload: user
+    payload: user,
   };
 };
 

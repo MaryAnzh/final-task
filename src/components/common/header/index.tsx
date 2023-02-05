@@ -14,9 +14,9 @@ import {
   HeaderWrap,
   LeftHeaderWrap,
   RightHeaderWrap,
-} from "./styled";
-import { useStore } from "@/context";
-import LoginOut from "@/components/simple/loginout";
+} from './styled';
+import { useStore } from '@/context';
+import LoginOut from '@/components/simple/loginout';
 
 export const Header = () => {
   const [state] = useStore();

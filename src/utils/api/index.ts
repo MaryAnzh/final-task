@@ -1,6 +1,6 @@
-import { IRegisterResp, ILoginRes } from "@/interfaces/response";
-import IUser from "@/interfaces/user";
-import axios from "axios";
+import { IRegisterResp, ILoginRes } from '@/interfaces/response';
+import IUser from '@/interfaces/user';
+import axios from 'axios';
 
 const instance = axios.create({
   baseURL: 'http://localhost:3001'

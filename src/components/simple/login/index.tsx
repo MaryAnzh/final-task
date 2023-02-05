@@ -7,7 +7,7 @@ import {
 export const LoginWrap = (props: {text: string}) => {
     return (
         <LoginStyled>
-            <Link href='/authorization'>Login</Link>
+            <Link href='/login'>Login</Link>
             <LoginSVG />
         </LoginStyled>
     );

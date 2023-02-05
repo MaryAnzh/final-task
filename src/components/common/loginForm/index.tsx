@@ -1,49 +1,59 @@
-import Link from 'next/link';
-import { Button, Form, Input, Title } from '../loginForm/styled';
-import { UserApi } from '@/utils/api';
-import { FormEvent } from 'react';
-import { setCookie } from 'nookies';
+import { Form, Input, Title, Button } from './styled';
+import postIcon from '@/icons/post.png';
+import lock from '@/icons/lock.png';
 import { useForm } from '@/hooks/useForm';
+import { FC, FormEvent } from 'react';
 import IUser from '@/interfaces/user';
 import { AxiosError } from 'axios';
-import lock from '@/icons/lock.png';
-import postIcon from '@/icons/post.png';
+import { signIn, getSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import { useStore } from '@/context';
 import {
   userFailCreator,
   userLoginCreator,
   userRequestCreator,
 } from '@/context/actions';
-import router from 'next/router';
+import { TStore } from '@/context/interfaces';
 import Spinner from '@/components/simple/spinner';
+import Link from 'next/link';
 
 const main_blu_color = 'blue';
 
-const AuthForm = () => {
+export const LoginForm: FC = () => {
   const initialValue: IUser = { email: '', password: '' };
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
   const { email, password } = values;
+  const router = useRouter();
   const [state, dispatch] = useStore();
 
-  const clickToSignUpUser = async (e: FormEvent) => {
-    dispatch(userRequestCreator());
+  const clickToSignInUser = async (e: FormEvent) => {
     try {
       e.preventDefault();
 
-      const user = await UserApi.register(values);
-      // setCookie(null, "rtoken", token, {
-      //   maxAge: 60 * 60 * 2,
-      //   path: "/",
-      // });
-      dispatch(userLoginCreator({ ...user }));
+      dispatch(userRequestCreator());
+      const { email, password } = values;
+      const result = await signIn('credentials', {
+        redirect: false,
+        username: email,
+        password,
+      });
+      if (!result?.error) {
+        const session = await getSession();
+        if (session) dispatch(userLoginCreator(session?.user as TStore));
+        router.replace('/');
+      }
       setValues(initialValue);
     } catch (e) {
       dispatch(userFailCreator());
       if (e instanceof AxiosError) {
-        console.log(`Регистрация не удалась: ${e}`);
+        console.log(`Вход не удался: ${e}`);
       }
-      console.log(`Регистрация не удалась: ${e}`);
+      console.log(`Вход не удалася: ${e}`);
     }
+  };
+
+  const handelGithabSignIn = async () => {
+    signIn('github', { callbackUrl: 'http://localhost:3000' });
   };
 
   if (state.authorization) {
@@ -55,7 +65,7 @@ const AuthForm = () => {
     <Spinner />
   ) : (
     <Form
-      name={'authForm'}
+      name={'loginForm'}
       color={main_blu_color}
       onSubmit={(e: FormEvent) => e.preventDefault()}
     >
@@ -78,12 +88,11 @@ const AuthForm = () => {
         src={lock.src}
         color={main_blu_color}
       />
-      <Button onClick={clickToSignUpUser}>Sign Up</Button>
+      <Button onClick={handelGithabSignIn}>Sign In With GitHab</Button>
+      <Button onClick={clickToSignInUser}>Sign In</Button>
       <p>
-        Do you have an account? <Link href={'/login'}>Sign In</Link>
+        Don't have an account? <Link href='/authorization'>Sign Up</Link>
       </p>
     </Form>
   );
 };
-
-export default AuthForm;
