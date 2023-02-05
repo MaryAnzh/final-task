@@ -13,6 +13,7 @@ import { useStore } from "@/context";
 import { userFailCreator, userLoginCreator, userRequestCreator } from "@/context/actions";
 import { TStore } from "../../../context/interfaces";
 import Spinner from "@/components/simple/spinner";
+import Link from "next/link";
 
 const main_blu_color = "blue";
 
@@ -24,8 +25,6 @@ export const AuthForm: FC = () => {
   const [state, dispatch] = useStore();
 
   const clickToSignUpUser = async (e: FormEvent) => {
-
-    useEffect(() => {}, []);
 
     try {
       e.preventDefault();
@@ -69,6 +68,10 @@ export const AuthForm: FC = () => {
     }
   };
 
+  const handelGithabSignIn = async() => {
+    signIn('github', {callbackUrl: 'http://localhost:3000'});
+  }
+
     if (state.authorization) {
       router.replace("/");
       return null
@@ -99,8 +102,9 @@ export const AuthForm: FC = () => {
         src={lock.src}
         color={main_blu_color}
       />
-      <Button onClick={clickToSignUpUser}>Sign Up</Button>
+      <Button onClick={handelGithabSignIn}>Sign In With GitHab</Button>
       <Button onClick={clickToSignInUser}>Sign In</Button>
+      <Button onClick={clickToSignUpUser}>Sign Up</Button>
     </Form>
   )
 };
