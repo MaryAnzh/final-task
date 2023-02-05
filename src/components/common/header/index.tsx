@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { en } from '../../../data/locales/en'
-import { ru } from '../../../data/locales/ru'
+import { en } from '../../../data/locales/en';
+import { ru } from '../../../data/locales/ru';
 import { RoutingEnum } from '@/data/constants/routing';
 import { LoginWrap } from '@/components/simple/login';
 import { LogoSVG } from '@/components/simple/logoSVG';
@@ -20,8 +20,8 @@ import LoginOut from '@/components/simple/loginout';
 
 export const Header = () => {
   const [state] = useStore();
-    const router = useRouter();
-    const t = router.locale === 'en' ? en : ru;
+  const router = useRouter();
+  const t = router.locale === 'en' ? en : ru;
   return (
     <HeaderStyled>
       <HeaderWrap>
@@ -33,14 +33,17 @@ export const Header = () => {
         </LeftHeaderWrap>
 
         <RightHeaderWrap>
-            <AnimationButton>
-                        {t.CLICK}
-                    </AnimationButton>
+          <AnimationButton>{t.CLICK}</AnimationButton>
           {state.authorization ? (
-            <LoginOut/>
+            <>
+              <LoginOut />
+              <Locales />
+            </>
           ) : (
-            <LoginWrap text={t.LOGIN}/>
-                    <Locales />
+            <>
+              <LoginWrap text={t.LOGIN} />
+              <Locales />
+            </>
           )}
         </RightHeaderWrap>
       </HeaderWrap>

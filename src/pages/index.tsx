@@ -1,6 +1,4 @@
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import Header from '@/components/common/header/header'
 import { useRouter } from 'next/router'
 import { en } from '@/data/locales/en'
 import { ru } from '@/data/locales/ru'

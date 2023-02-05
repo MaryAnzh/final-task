@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Button, Form, Input, Title } from '../loginForm/styled';
 import { UserApi } from '@/utils/api';
 import { FormEvent } from 'react';
-import { setCookie } from 'nookies';
 import { useForm } from '@/hooks/useForm';
 import IUser from '@/interfaces/user';
 import { AxiosError } from 'axios';
