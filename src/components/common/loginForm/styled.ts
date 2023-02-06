@@ -15,6 +15,11 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media (max-width: 400px) {
+    & {
+      border: none;
+    }
+  }
    a {
     color: ${({ theme }) => theme.variable.main};
     cursor: pointer;
