@@ -4,6 +4,7 @@ import {
   AppWrapper,
   MainStyled
 } from './styled';
+import Footer from '@/components/common/footer'
 
 export const Layout = ({ children }: PropsWithChildren) => {
   return (
@@ -12,6 +13,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
       <MainStyled>
         {children}
       </MainStyled>
+    <Footer/>
     </AppWrapper>
   )
 }
