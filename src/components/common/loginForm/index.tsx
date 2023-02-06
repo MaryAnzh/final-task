@@ -1,6 +1,6 @@
 import { Form, Input, Title, Button } from './styled';
-import postIcon from '@/icons/post.png';
-import lock from '@/icons/lock.png';
+import postIcon from '@/assets/icons/post.svg';
+import lock from '@/assets/icons/lock.svg';
 import { useForm } from '@/hooks/useForm';
 import { FC, FormEvent } from 'react';
 import IUser from '@/interfaces/user';
@@ -16,8 +16,8 @@ import {
 import { TStore } from '@/context/interfaces';
 import Spinner from '@/components/simple/spinner';
 import Link from 'next/link';
-
-const main_blu_color = 'blue';
+import { loginForm_en as en } from '@/data/locales/loginForm_en';
+import { loginForm_ru as ru } from '@/data/locales/loginForm_ru';
 
 export const LoginForm: FC = () => {
   const initialValue: IUser = { email: '', password: '' };
@@ -60,38 +60,36 @@ export const LoginForm: FC = () => {
     router.replace('/');
     return null;
   }
+  const t = router.locale === 'en' ? en : ru;
 
   return state.loading ? (
     <Spinner />
   ) : (
     <Form
       name={'loginForm'}
-      color={main_blu_color}
       onSubmit={(e: FormEvent) => e.preventDefault()}
     >
-      <Title>Authorization</Title>
+      <Title>{t.LOGIN}</Title>
       <Input
         name={'email'}
         type={'email'}
-        placeholder={'E-mail'}
+        placeholder={t.E_MAIL}
         value={email}
         onChange={handleChange}
         src={postIcon.src}
-        color={main_blu_color}
       />
       <Input
         name={'password'}
         type={'password'}
-        placeholder={'Password'}
+        placeholder={t.PASSWORD}
         value={password}
         onChange={handleChange}
         src={lock.src}
-        color={main_blu_color}
       />
-      <Button onClick={handelGithabSignIn}>Sign In With GitHab</Button>
-      <Button onClick={clickToSignInUser}>Sign In</Button>
+      <Button onClick={handelGithabSignIn}>{t.GIT_SIGN_IN}</Button>
+      <Button onClick={clickToSignInUser}>{t.SIGN_IN}</Button>
       <p>
-        Don't have an account? <Link href='/authorization'>Sign Up</Link>
+        {t.TEXT} <Link href='/authorization'>{t.SIGN_UP}</Link>
       </p>
     </Form>
   );

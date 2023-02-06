@@ -5,8 +5,8 @@ import { FormEvent } from 'react';
 import { useForm } from '@/hooks/useForm';
 import IUser from '@/interfaces/user';
 import { AxiosError } from 'axios';
-import lock from '@/icons/lock.png';
-import postIcon from '@/icons/post.png';
+import lock from '@/assets/icons/lock.svg';
+import postIcon from '@/assets/icons/post.svg';
 import { useStore } from '@/context';
 import {
   userFailCreator,
@@ -15,6 +15,9 @@ import {
 } from '@/context/actions';
 import router from 'next/router';
 import Spinner from '@/components/simple/spinner';
+import { authForm_en as en } from '@/data/locales/authForm_en';
+import { authForm_ru as ru } from '@/data/locales/authForm_ru';
+import { useRouter } from 'next/dist/client/router';
 
 const main_blu_color = 'blue';
 
@@ -23,6 +26,7 @@ const AuthForm = () => {
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
   const { email, password } = values;
   const [state, dispatch] = useStore();
+  const router = useRouter();
 
   const clickToSignUpUser = async (e: FormEvent) => {
     dispatch(userRequestCreator());
@@ -49,6 +53,7 @@ const AuthForm = () => {
     router.replace('/');
     return null;
   }
+  const t = router.locale === 'en' ? en : ru;
 
   return state.loading ? (
     <Spinner />
@@ -58,11 +63,11 @@ const AuthForm = () => {
       color={main_blu_color}
       onSubmit={(e: FormEvent) => e.preventDefault()}
     >
-      <Title>Authorization</Title>
+      <Title>{t.AUYHORIZATION}</Title>
       <Input
         name={'email'}
         type={'email'}
-        placeholder={'E-mail'}
+        placeholder={t.E_MAIL}
         value={email}
         onChange={handleChange}
         src={postIcon.src}
@@ -71,15 +76,15 @@ const AuthForm = () => {
       <Input
         name={'password'}
         type={'password'}
-        placeholder={'Password'}
+        placeholder={t.PASSWORD}
         value={password}
         onChange={handleChange}
         src={lock.src}
         color={main_blu_color}
       />
-      <Button onClick={clickToSignUpUser}>Sign Up</Button>
+      <Button onClick={clickToSignUpUser}>{t.SIGN_UP}</Button>
       <p>
-        Do you have an account? <Link href={'/login'}>Sign In</Link>
+        {t.TEXT} <Link href={'/login'}>{t.SIGN_IN}</Link>
       </p>
     </Form>
   );
