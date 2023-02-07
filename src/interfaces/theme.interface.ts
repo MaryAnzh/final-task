@@ -1,4 +1,4 @@
-import { IAuthTheme } from './authTheme';
+// import { IAuthTheme } from './authTheme';
 import { IHeaderTheme } from './headerTheme';
 
 export enum ThemeEnum {

@@ -1,0 +1,9 @@
+export const loginForm_ru = {
+  LOGIN: 'Вход',
+  SIGN_IN: 'Войти',
+  GIT_SIGN_IN: 'Войти через GitHab',
+  TEXT: `Еще не зарегистрирован?`,
+  SIGN_UP: 'Зарегистрируйся',
+  PASSWORD: 'Пароль',
+  E_MAIL: 'Почта',
+};
