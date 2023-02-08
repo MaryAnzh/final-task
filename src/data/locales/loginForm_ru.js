@@ -6,4 +6,6 @@ export const loginForm_ru = {
   SIGN_UP: 'Зарегистрируйся',
   PASSWORD: 'Пароль',
   E_MAIL: 'Почта',
+  VALID_PASS: 'Минимальная длинна пароля 3 символа',
+  VALID_E_MAIL: 'неверный формат адреса',
 };

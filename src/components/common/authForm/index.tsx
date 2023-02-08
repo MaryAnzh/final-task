@@ -1,25 +1,32 @@
+import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import { Button, Form, Input, Title } from '../loginForm/styled';
-import { UserApi } from '@/utils/api';
 import { FormEvent } from 'react';
-import { useForm } from '@/hooks/useForm';
-import IUser from '@/interfaces/user';
-import { AxiosError } from 'axios';
-import lock from '@/assets/icons/lock.svg';
-import postIcon from '@/assets/icons/post.svg';
+
+import CustomInput from '@/components/simple/customInput';
+import LockSVG from '@/components/simple/lockSVG';
+import PostSVG from '@/components/simple/postSVG';
+import Spinner from '@/components/simple/spinner';
+
 import { useStore } from '@/context';
 import {
   userFailCreator,
   userLoginCreator,
   userRequestCreator,
 } from '@/context/actions';
-import router from 'next/router';
-import Spinner from '@/components/simple/spinner';
+
+import { RoutingEnum } from '@/data/constants/routing';
 import { authForm_en as en } from '@/data/locales/authForm_en';
 import { authForm_ru as ru } from '@/data/locales/authForm_ru';
-import { useRouter } from 'next/dist/client/router';
 
-const main_blu_color = 'blue';
+import { useForm } from '@/hooks/useForm';
+
+import IUser from '@/interfaces/user';
+
+import { UserApi } from '@/utils/api';
+import validEmail from '@/utils/validEmail';
+import validPass from '@/utils/validPass';
+
+import { Button, Form, Title } from '../loginForm/styled';
 
 const AuthForm = () => {
   const initialValue: IUser = { email: '', password: '' };
@@ -42,9 +49,6 @@ const AuthForm = () => {
       setValues(initialValue);
     } catch (e) {
       dispatch(userFailCreator());
-      if (e instanceof AxiosError) {
-        console.log(`Регистрация не удалась: ${e}`);
-      }
       console.log(`Регистрация не удалась: ${e}`);
     }
   };
@@ -55,36 +59,46 @@ const AuthForm = () => {
   }
   const t = router.locale === 'en' ? en : ru;
 
-  return state.loading ? (
-    <Spinner />
-  ) : (
+  return (
     <Form
       name={'authForm'}
-      color={main_blu_color}
+      noValidate={true}
       onSubmit={(e: FormEvent) => e.preventDefault()}
     >
       <Title>{t.AUYHORIZATION}</Title>
-      <Input
+      <CustomInput
+        svg={<LockSVG />}
         name={'email'}
         type={'email'}
         placeholder={t.E_MAIL}
-        value={email}
         onChange={handleChange}
-        src={postIcon.src}
-        color={main_blu_color}
+        value={email}
+        err={t.VALID_E_MAIL}
+        valid={validEmail(email)}
       />
-      <Input
+      <CustomInput
+        svg={<PostSVG />}
         name={'password'}
         type={'password'}
         placeholder={t.PASSWORD}
-        value={password}
         onChange={handleChange}
-        src={lock.src}
-        color={main_blu_color}
+        value={password}
+        err={t.VALID_PASS}
+        valid={validPass(password)}
       />
-      <Button onClick={clickToSignUpUser}>{t.SIGN_UP}</Button>
+      <Button
+        onClick={clickToSignUpUser}
+        disabled={
+          !validPass(password) ||
+          !validEmail(email) ||
+          password.length === 0 ||
+          email.length === 0
+        }
+      >
+        {state.loading ? <Spinner /> : t.SIGN_UP}
+      </Button>
       <p>
-        {t.TEXT} <Link href={'/login'}>{t.SIGN_IN}</Link>
+        {t.TEXT} <Link href={RoutingEnum.login}>{t.SIGN_IN}</Link>
       </p>
     </Form>
   );

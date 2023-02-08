@@ -5,4 +5,6 @@ export const authForm_ru = {
   TEXT: 'Уже есть аккаунт?',
   PASSWORD: 'Пароль',
   E_MAIL: 'Почта',
+  VALID_PASS: 'Минимальная длинна пароля 3 символа',
+  VALID_E_MAIL: 'неверный формат адреса',
 };
