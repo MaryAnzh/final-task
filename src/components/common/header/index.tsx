@@ -7,7 +7,6 @@ import { RoutingEnum } from '@/data/constants/routing';
 import { LoginWrap } from '@/components/simple/login';
 import { LogoSVG } from '@/components/simple/logoSVG';
 import { Nav } from '@/components/smart/nav';
-import { AnimationButton } from './animationButton/styled';
 import { Locales } from '@/components/smart/locales';
 import {
   HeaderStyled,
@@ -33,7 +32,6 @@ export const Header = () => {
         </LeftHeaderWrap>
 
         <RightHeaderWrap>
-          <AnimationButton>{t.CLICK}</AnimationButton>
           {state.authorization ? (
             <>
               <LoginOut />

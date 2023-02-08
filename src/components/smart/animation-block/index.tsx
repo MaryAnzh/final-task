@@ -1,9 +1,14 @@
-import { AnimationBlockStyled } from "./styled";
+import { AnimationButton } from "./animationButton/styled";
+import { AnimationBlockStyled, AnimationButtonWrap } from "./styled";
 
 export const AnimationBlock = () => {
-    return(
+    return (
         <AnimationBlockStyled>
-            Animation
+            <AnimationButtonWrap>
+                <div className="animation-button-wrap">
+                    <AnimationButton>Click</AnimationButton>
+                </div>
+            </AnimationButtonWrap>
         </AnimationBlockStyled>
     );
 }

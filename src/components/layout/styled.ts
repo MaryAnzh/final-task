@@ -15,5 +15,4 @@ export const MainStyled = styled.main`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
 `;
