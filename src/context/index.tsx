@@ -1,13 +1,14 @@
 import {
-  createContext,
   Dispatch,
   FC,
   ReactNode,
+  createContext,
   useContext,
   useReducer,
 } from 'react';
-import authConstants from './conastance';
-import { IAction, initialState, IState } from './interfaces';
+
+import authConstants from './constance';
+import { IAction, IState, initialState } from './interfaces';
 
 export const Store = createContext<[IState, Dispatch<IAction>]>([
   initialState,

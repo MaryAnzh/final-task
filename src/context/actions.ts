@@ -1,4 +1,4 @@
-import authConstants from './conastance';
+import authConstants from './constance';
 import { TStore } from './interfaces';
 
 export const userRequestCreator = () => {
