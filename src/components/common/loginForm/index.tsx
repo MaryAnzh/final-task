@@ -1,12 +1,14 @@
-import { Form, Input, Title, Button } from './styled';
-import postIcon from '@/assets/icons/post.svg';
-import lock from '@/assets/icons/lock.svg';
-import { useForm } from '@/hooks/useForm';
-import { FC, FormEvent } from 'react';
-import IUser from '@/interfaces/user';
 import { AxiosError } from 'axios';
-import { signIn, getSession } from 'next-auth/react';
+import { getSession, signIn } from 'next-auth/react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { FC, FormEvent } from 'react';
+
+import CustomInput from '@/components/simple/customInput';
+import LockSVG from '@/components/simple/lockSVG';
+import PostSVG from '@/components/simple/postSVG';
+import Spinner from '@/components/simple/spinner';
+
 import { useStore } from '@/context';
 import {
   userFailCreator,
@@ -14,10 +16,19 @@ import {
   userRequestCreator,
 } from '@/context/actions';
 import { TStore } from '@/context/interfaces';
-import Spinner from '@/components/simple/spinner';
-import Link from 'next/link';
+
+import { RoutingEnum } from '@/data/constants/routing';
 import { loginForm_en as en } from '@/data/locales/loginForm_en';
 import { loginForm_ru as ru } from '@/data/locales/loginForm_ru';
+
+import { useForm } from '@/hooks/useForm';
+
+import IUser from '@/interfaces/user';
+
+import validEmail from '@/utils/validEmail';
+import validPass from '@/utils/validPass';
+
+import { Button, Form, Title } from './styled';
 
 export const LoginForm: FC = () => {
   const initialValue: IUser = { email: '', password: '' };
@@ -29,7 +40,6 @@ export const LoginForm: FC = () => {
   const clickToSignInUser = async (e: FormEvent) => {
     try {
       e.preventDefault();
-
       dispatch(userRequestCreator());
       const { email, password } = values;
       const result = await signIn('credentials', {
@@ -41,6 +51,8 @@ export const LoginForm: FC = () => {
         const session = await getSession();
         if (session) dispatch(userLoginCreator(session?.user as TStore));
         router.replace('/');
+      } else {
+        throw new Error(result.error);
       }
       setValues(initialValue);
     } catch (e) {
@@ -52,8 +64,8 @@ export const LoginForm: FC = () => {
     }
   };
 
-  const handelGithabSignIn = async () => {
-    signIn('github', { callbackUrl: 'http://localhost:3000' });
+  const handleGithabSignIn = async () => {
+    signIn('github', { callbackUrl: RoutingEnum.baseUrl });
   };
 
   if (state.authorization) {
@@ -62,34 +74,47 @@ export const LoginForm: FC = () => {
   }
   const t = router.locale === 'en' ? en : ru;
 
-  return state.loading ? (
-    <Spinner />
-  ) : (
+  return (
     <Form
       name={'loginForm'}
+      noValidate={true}
       onSubmit={(e: FormEvent) => e.preventDefault()}
     >
       <Title>{t.LOGIN}</Title>
-      <Input
+      <CustomInput
+        svg={<LockSVG />}
         name={'email'}
         type={'email'}
         placeholder={t.E_MAIL}
-        value={email}
         onChange={handleChange}
-        src={postIcon.src}
+        value={email}
+        err={t.VALID_E_MAIL}
+        valid={validEmail(email)}
       />
-      <Input
+      <CustomInput
+        svg={<PostSVG />}
         name={'password'}
         type={'password'}
         placeholder={t.PASSWORD}
-        value={password}
         onChange={handleChange}
-        src={lock.src}
+        value={password}
+        err={t.VALID_PASS}
+        valid={validPass(password)}
       />
-      <Button onClick={handelGithabSignIn}>{t.GIT_SIGN_IN}</Button>
-      <Button onClick={clickToSignInUser}>{t.SIGN_IN}</Button>
+      <Button onClick={handleGithabSignIn}>{t.GIT_SIGN_IN}</Button>
+      <Button
+        onClick={clickToSignInUser}
+        disabled={
+          !validPass(password) ||
+          !validEmail(email) ||
+          password.length === 0 ||
+          email.length === 0
+        }
+      >
+        {state.loading ? <Spinner /> : t.SIGN_IN}
+      </Button>
       <p>
-        {t.TEXT} <Link href='/authorization'>{t.SIGN_UP}</Link>
+        {t.TEXT} <Link href={RoutingEnum.authorization}>{t.SIGN_UP}</Link>
       </p>
     </Form>
   );

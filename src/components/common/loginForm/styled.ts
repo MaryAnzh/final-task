@@ -15,7 +15,12 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
-   a {
+  @media (max-width: 420px) {
+    & {
+      border: none;
+    }
+  }
+  a {
     color: ${({ theme }) => theme.variable.main};
     cursor: pointer;
 
@@ -36,8 +41,14 @@ export const Input = styled.input`
   background-position: 4px;
   background-size: 28px 28px;
   padding-left: 35px;
+  @media (max-width: 420px) {
+    & {
+      font-size: 1em;
+    }
+  }
 `;
 export const Button = styled.button`
+  dispaly: block;
   width: 100%;
   font-size: 1em;
   border: none;

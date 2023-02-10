@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { I, Container } from './styled';
+
+import { Container, I } from './styled';
 
 const Spinner: FC = () => {
   return (
