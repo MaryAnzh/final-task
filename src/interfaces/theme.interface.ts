@@ -48,6 +48,10 @@ export interface IThemeColor {
     font: string,
     title: string,
     link: string,
+    buttonBackground: string,
+    buttonTextColor: string,
+    buttonHover: string,
+    buttonActive: string,
 }
 
 export interface ISize {

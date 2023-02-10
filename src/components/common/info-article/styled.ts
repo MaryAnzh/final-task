@@ -13,25 +13,42 @@ export const ArticleWrap = styled.div`
 
 export const ArticleInfo = styled.article`
     width: 100%;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
 `;
 
 export const ArticleTitle = styled.h2`
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     font-size: 2rem;
     color: ${({ theme }) => theme.themeColor.font};
     font-weight: 600;
     font-family: ${({ theme }) => theme.titleFamily};
+
+    @media (max-width: 800px) {
+        padding-bottom: 30px;
+    }
 `;
 
 export const ArticleText = styled.p`
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     font-family: ${({ theme }) => theme.titleFamily};
     color: ${({ theme }) => theme.themeColor.font};
     font-size: 1rem;
 
     &::first-letter {
-        padding-left: 20px;
+        padding-left: 10px;
     }
+`;
+
+export const ArticleButtonWrap = styled.div`
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
 `;

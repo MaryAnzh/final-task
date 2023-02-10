@@ -43,6 +43,10 @@ export const theme: ITheme = {
         font: variable.mainDark,
         title: variable.main,
         link: variable.secondary,
+        buttonBackground: variable.mainDark,
+        buttonTextColor: variable.mainExtraLight,
+        buttonHover: variable.mainDark2,
+        buttonActive: variable.mainLight,
         header: {
             logoFill: variable.secondary,
             logoStroke: variable.mainDark2,
