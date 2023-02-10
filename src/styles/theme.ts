@@ -29,6 +29,8 @@ export const theme: ITheme = {
     background: 'white',
     color: 'black',
     variable: variable,
+    fontFamily: '"Roboto", sans-serif',
+    titleFamily: '"Readex Pro", sans-serif',
     size: {
         maxDeskYop: '1200px',
         tablet: '760px',

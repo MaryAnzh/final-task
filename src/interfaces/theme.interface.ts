@@ -9,6 +9,8 @@ export enum ThemeEnum {
 export interface ITheme {
     background: string,
     color: string,
+    fontFamily: string,
+    titleFamily: string,
     variable: IColor,
     themeColor: IThemeColor,
     size: ISize,

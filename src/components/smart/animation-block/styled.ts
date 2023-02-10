@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const AnimationBlockStyled = styled.div`
   width: 100%;
-  height: 200px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between
 `;
 
 export const AnimationButtonWrap = styled.div`
@@ -18,6 +19,6 @@ export const AnimationButtonWrap = styled.div`
         width: 100%;
         max-width: 1200px;
         display: flex;
-    justify-content: flex-end;
+        justify-content: flex-end;
     }
 `;
