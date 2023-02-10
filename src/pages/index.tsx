@@ -5,8 +5,8 @@ import { ru } from '@/data/locales/ru'
 import { AnimationBlock } from '@/components/smart/animation-block'
 import { AboutPageWrap } from './styled'
 import { TeamsBackground } from './styled'
-import { TeamInfoWrap } from '@/components/simple/teem-info/styled'
 import { TeamInfoArticle } from '@/components/common/info-article/team-info'
+import { TeamInfoBlock } from '@/components/simple/teem-info-block'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,8 +18,8 @@ export default function Home() {
     <AboutPageWrap>
       <AnimationBlock />
       <TeamsBackground />
-      <TeamInfoArticle/>
-      <TeamInfoWrap />
+      <TeamInfoArticle />
+      <TeamInfoBlock />
     </AboutPageWrap>
   )
 }

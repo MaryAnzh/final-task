@@ -7,7 +7,8 @@ import {
     ArticleInfo,
     ArticleTitle,
     ArticleText,
-    ArticleButtonWrap
+    ArticleButtonWrap,
+    ArticleTextP,
 } from "../styled";
 
 export const TeamInfoArticle = () => {
@@ -18,7 +19,11 @@ export const TeamInfoArticle = () => {
         <ArticleWrap>
             <ArticleInfo>
                 <ArticleTitle>{t.TEAM_INFO_TITLE}</ArticleTitle>
-                <ArticleText>{t.TEAM_INFO_TEXT}</ArticleText>
+                <ArticleText>
+                    <ArticleTextP>
+                        {t.TEAM_INFO_TEXT}
+                    </ArticleTextP>
+                </ArticleText>
             </ArticleInfo>
             <ArticleButtonWrap>
                 <LinkButton>{t.MORE}</LinkButton>

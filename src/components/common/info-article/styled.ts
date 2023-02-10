@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ArticleWrap = styled.div`
     max-width: 1200px;
     width: 100%;
-    height: 220px;
+    min-height: 220px;
     padding: 20px 0;
     display: flex;
     flex-direction: column;
@@ -35,13 +35,18 @@ export const ArticleTitle = styled.h2`
     }
 `;
 
-export const ArticleText = styled.p`
-    max-width: 400px;
+export const ArticleText = styled.div`
+    max-width: 500px;
     width: 100%;
+`;
+
+export const ArticleTextP = styled.p`
     font-family: ${({ theme }) => theme.titleFamily};
     color: ${({ theme }) => theme.themeColor.font};
+    font-weight: 300;
     font-size: 1rem;
-
+    padding-bottom: 10px;
+    
     &::first-letter {
         padding-left: 10px;
     }

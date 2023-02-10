@@ -5,19 +5,27 @@ import {
     ArticleWrap,
     ArticleInfo,
     ArticleTitle,
-    ArticleText
+    ArticleText,
+    ArticleTextP
 } from "../styled";
 
 export const TaskInfo = () => {
     const router = useRouter();
     const t = router.locale === 'en' ? en : ru;
-    
-    return(
+
+    return (
         <ArticleWrap>
             <ArticleInfo>
                 <ArticleTitle>{t.GREETING_TITLE}</ArticleTitle>
-                <ArticleText>{t.GREETING_TEXT}</ArticleText>
+                <ArticleText>
+                    <ArticleTextP>
+                        {t.GREETING_TEXT}
+                    </ArticleTextP>
+                    <ArticleTextP>
+                        {t.GREETING_TEXT_2}
+                    </ArticleTextP>
+                </ArticleText>
             </ArticleInfo>
-        </ArticleWrap>
+        </ArticleWrap >
     );
 }
