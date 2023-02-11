@@ -13,7 +13,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
       <MainStyled>
         {children}
       </MainStyled>
-    <Footer/>
+        <Footer/>
     </AppWrapper>
   )
 }

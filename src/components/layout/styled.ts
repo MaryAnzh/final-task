@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const AppWrapper = styled.div`
     width: 100%;
@@ -14,5 +14,5 @@ export const MainStyled = styled.main`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-`; 
+  width: 100%;
+`;

@@ -1,6 +1,5 @@
 import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
-import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider } from 'styled-components'
 import { Layout } from '@/components/layout/layout'
 import { lightTheme } from '@/styles/theme'

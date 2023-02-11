@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const FooterStyled = styled.footer`
   width: 100%;
   padding: 60px 0;
-  background-color: #002B4E;
-  color: white;
+  background-color: ${({ theme }) => theme.themeColor.footer.background};;
+  color: ${({ theme }) => theme.themeColor.footer.textColor};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,10 +72,10 @@ export const FirstRowText = styled.p`
 export const FirstRowInputGroup = styled.div`
   display: flex;
   flex-direction: row;
-  border: 2px solid white;
+  border: 2px solid ${({ theme }) => theme.themeColor.footer.textColor};;
   border-radius: 5px;
   overflow: hidden;
-  background-color: #FFF;
+  background-color: ${({ theme }) => theme.themeColor.footer.textColor};;
 
   @media(max-width: 768px) {
     width: 100%;
@@ -85,12 +85,12 @@ export const FirstRowInputGroup = styled.div`
 `;
 
 export const FirstRowInput = styled.input`
-  background-color: #BDD1FB;
+  background-color: ${({ theme }) => theme.themeColor.footer.inputBackground};;
   border: none;
   font-size: 17px;
   outline: none;
   padding: 7px 10px;
-  color: black;
+  color: ${({ theme }) => theme.themeColor.footer.inputTextColor};;
   box-shadow: inset 0 0 0 white;
   transition: 0.6s all;
   font-family: 'Readex Pro', sans-serif;
@@ -112,7 +112,7 @@ export const FirstRowInput = styled.input`
 
 export const FirstRowButton = styled.button`
   background-color: #fffffd;
-  color: black;
+  color: ${({ theme }) => theme.themeColor.footer.buttonColor};
   outline: none;
   border: none;
   font-size: 15px;
@@ -136,7 +136,7 @@ export const FirstRowButton = styled.button`
 export const FooterLine = styled.hr`
   width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: ${({ theme }) => theme.themeColor.footer.hrColor};
   border: none;
 `;
 
@@ -217,7 +217,7 @@ export const SecondRowRightPartCol = styled.div`
   .nav-item {
     margin-top: 5px;
     text-decoration: none;
-    color: white;
+    color: ${({ theme }) => theme.themeColor.footer.textColor};
     cursor: pointer;
     font-weight: 100;
     font-size: 13px;
@@ -235,7 +235,7 @@ export const SecondRowRightPartColTitle = styled.span`
   font-weight: 500;
   margin-bottom: 15px;
   font-size: 17px;
-  color: white;
+  color: ${({ theme }) => theme.themeColor.footer.textColor};
 `
 
 
