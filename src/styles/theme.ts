@@ -29,6 +29,8 @@ export const theme: ITheme = {
     background: 'white',
     color: 'black',
     variable: variable,
+    fontFamily: '"Roboto", sans-serif',
+    titleFamily: '"Readex Pro", sans-serif',
     size: {
         maxDeskYop: '1200px',
         tablet: '760px',
@@ -41,6 +43,10 @@ export const theme: ITheme = {
         font: variable.mainDark,
         title: variable.main,
         link: variable.secondary,
+        buttonBackground: variable.mainDark,
+        buttonTextColor: variable.mainExtraLight,
+        buttonHover: variable.mainDark2,
+        buttonActive: variable.mainLight,
         header: {
             logoFill: variable.secondary,
             logoStroke: variable.mainDark2,

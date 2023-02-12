@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { LocalesStyled, LangEn, LangRu } from "./styled"
+import { LocalesStyled, LangEn, LangRu } from './styled'
 
 export const Locales = () => {
     const router = useRouter();
@@ -8,10 +8,10 @@ export const Locales = () => {
 
     return (
         <LocalesStyled>
-            <Link href={router} locale="en">
+            <Link href={router} locale='en'>
                 <LangEn lang={locale}>En</LangEn>
             </Link>
-            <Link href={router} locale="ru">
+            <Link href={router} locale='ru'>
                 <LangRu lang={locale}>Ru</LangRu>
             </Link>
         </LocalesStyled>

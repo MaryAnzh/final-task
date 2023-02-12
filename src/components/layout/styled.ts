@@ -9,10 +9,10 @@ export const AppWrapper = styled.div`
 `;
 
 export const MainStyled = styled.main`
+  width: 100%;
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
 `;

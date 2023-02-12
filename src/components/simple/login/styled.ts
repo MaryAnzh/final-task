@@ -6,6 +6,11 @@ export const LoginStyled = styled.div`
     justify-content: space-between;
     align-items: flex-end;
     transition: .3s;
+    
+    @media (max-width: 650px) {
+      margin-top: 16px;
+      margin-bottom: 10px;
+    }
 
       a {
           width: 50px;

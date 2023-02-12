@@ -6,10 +6,18 @@ export const NavStyled = styled.nav`
   align-items: center;
   justify-content: space-between;
   
+  @media (max-width: 650px) {
+        width: 150px;
+    }
+
   .nav-item {
-    
+
+    @media (max-width: 650px) {
+        padding-top: 20px;
+    }
+
     &__link {
-      padding: 0 20px;
+        padding: 0 20px;
         text-transform: uppercase;
         font-size: 0.8em;
         transition: 3s;
@@ -17,6 +25,10 @@ export const NavStyled = styled.nav`
         &:hover {
           text-decoration: underline;
         }
+
+        @media (max-width: 650px) {
+        padding: 0;
+    }
     }
   }
   

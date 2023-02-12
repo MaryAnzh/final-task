@@ -9,6 +9,7 @@ export const AnimationButton = styled.button`
   color: ${({ theme }) => theme.variable.mainExtraLight};
   cursor: pointer;
   text-transform: uppercase;
+  padding-bottom: 5px;
   transition: 0.3s;
 
   &:hover {
