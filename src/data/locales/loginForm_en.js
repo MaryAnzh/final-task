@@ -6,4 +6,6 @@ export const loginForm_en = {
   SIGN_UP: 'Sign Up',
   PASSWORD: 'Password',
   E_MAIL: 'E-Mail',
+  VALID_PASS: 'Minimum 3 characters',
+  VALID_E_MAIL: 'Invalid address format',
 };

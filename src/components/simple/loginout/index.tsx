@@ -7,7 +7,7 @@ import { userFailCreator } from '@/context/actions';
 export const LoginOut = () => {
   const [state, dispatch] = useStore();
 
-  const handelClick = () => {
+  const handleClick = () => {
     signOut({
       redirect: false,
     }).then(() => dispatch(userFailCreator()));
@@ -17,7 +17,7 @@ export const LoginOut = () => {
     <LoginStyled>
       <Link
         href='/'
-        onClick={handelClick}
+        onClick={handleClick}
       >
         LoginOut
       </Link>
