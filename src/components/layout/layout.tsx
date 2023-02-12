@@ -1,9 +1,9 @@
-import React, { PropsWithChildren, useEffect } from "react";
-import { Header } from "../common/header";
-import { AppWrapper, MainStyled } from "./styled";
-import { useStore } from "@/context";
-import { getSession } from "next-auth/react";
-import authConstants from "@/context/conastance";
+import React, { PropsWithChildren, useEffect } from 'react';
+import { Header } from '../common/header';
+import { AppWrapper, MainStyled } from './styled';
+import { useStore } from '@/context';
+import { getSession } from 'next-auth/react';
+import authConstants from '@/context/conastance';
 import Footer from '@/components/common/footer'
 
 export const Layout = ({ children }: PropsWithChildren) => {

@@ -3,10 +3,9 @@ import { useRouter } from 'next/router'
 import { en } from '@/data/locales/en'
 import { ru } from '@/data/locales/ru'
 import { AnimationBlock } from '@/components/smart/animation-block'
-import { AboutPageWrap } from './styled'
-import { TeamsBackground } from './styled'
 import { TeamInfoArticle } from '@/components/common/info-article/team-info'
 import { TeamInfoBlock } from '@/components/simple/teem-info-block'
+import { AboutPageWrap, TeamsBackground } from './styled'
 
 const inter = Inter({ subsets: ['latin'] })
 

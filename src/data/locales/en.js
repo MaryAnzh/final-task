@@ -5,7 +5,7 @@ export const en = {
     LOGIN: 'Login',
     GREETING_TITLE: 'Hello, and Welcome to our teams Task',
     GREETING_TEXT: 'This project is the final task of the course RS School JavaScript/Front-end 2022Q3,',
-    GREETING_TEXT_2: `The project is a website business card of our team. You can log in to the application, see our location on the map or find out information about us, write us a feedback that will be displayed on the site, or send yourself a letter sent by us by mail. Animations and other interesting features are also waiting for you`,
+    GREETING_TEXT_2: 'The project is a website business card of our team. You can log in to the application, see our location on the map or find out information about us, write us a feedback that will be displayed on the site, or send yourself a letter sent by us by mail. Animations and other interesting features are also waiting for you',
     TEAM_INFO_TITLE: 'About our team',
     TEAM_INFO_TEXT: 'Our team consists of three people: Masha (teamlead), Nikita and Dima.',
     MORE: 'More...',

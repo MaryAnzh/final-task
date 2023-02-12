@@ -9,7 +9,7 @@ import {
     ArticleText,
     ArticleButtonWrap,
     ArticleTextP,
-} from "../styled";
+} from '../styled';
 
 export const TeamInfoArticle = () => {
     const router = useRouter();

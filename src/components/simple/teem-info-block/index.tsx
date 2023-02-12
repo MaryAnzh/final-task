@@ -5,7 +5,7 @@ import {
     TeamInfoWrap,
     AboutTeamWorkTitle,
     AboutTeamWorkText
-} from "./styled";
+} from './styled';
 
 export const TeamInfoBlock = () => {
     const router = useRouter();

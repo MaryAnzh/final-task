@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TeamInfoWrap = styled.article`
     max-width: 1200px;

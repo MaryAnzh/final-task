@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const bgHight = 285;
 const bgWidth = 490;

@@ -7,7 +7,7 @@ import {
     ArticleTitle,
     ArticleText,
     ArticleTextP
-} from "../styled";
+} from '../styled';
 
 export const TaskInfo = () => {
     const router = useRouter();
