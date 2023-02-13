@@ -25,7 +25,7 @@ const Feedbacks = () => {
     loop: false,
     slides: {
       perView: 4,
-      spacing: 10,
+      spacing: 20,
     },
     rtl: true,
     breakpoints: {

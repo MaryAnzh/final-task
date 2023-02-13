@@ -1,13 +1,17 @@
-import '@/styles/globals.scss';
+import { SessionProvider } from 'next-auth/react';
 // import { appWithTranslation } from 'next-i18next'
 import type { AppProps } from 'next/app';
-import { Layout } from '@/components/layout/layout';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from '@/styles/theme';
-import { GlobalStyle } from '@/styles/global';
-import { StoreProvider } from '@/context';
-import { SessionProvider } from 'next-auth/react';
 
+import { Layout } from '@/components/layout/layout';
+
+import { StoreProvider } from '@/context';
+
+import { GlobalStyle } from '@/styles/global';
+import '@/styles/globals.scss';
+import { lightTheme } from '@/styles/theme';
+
+import '../index.css';
 
 export default function App({
   Component,

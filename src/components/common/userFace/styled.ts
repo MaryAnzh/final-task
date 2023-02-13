@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const Wrapper = styled.div`
 display: flex;
 flex-direction: column`
@@ -20,4 +21,5 @@ export const Avatar = styled.img`
 export const Name = styled.h4`
   font-family: 'Readex Pro', sans-serif;
   font-size: 14px;
+  font-weight: 600;
 `;

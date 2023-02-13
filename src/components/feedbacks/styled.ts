@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SliderContainer = styled.div`
-  max-width: 900px;
+  max-width: 1050px;
   @media (max-width: 1000px) {
     max-width: 650px;
   }
@@ -27,13 +27,15 @@ export const Message = styled.p`
 `;
 
 export const Container = styled.div`
-  width: 100%;
   max-widtch: ${({ theme }) => theme.size.maxDeskYop};
+  margin-bottom: 30px;
 `;
 
 export const Title = styled.h3`
-  font-size: 1.5em;
-  font-family: 'Readex Pro', sans-serif;
+  font-size: 2em;
+  font-family: ${({ theme }) => theme.titleFamily};
+  font-weight: 600;
+  color: ${({ theme }) => theme.themeColor.font};
 `;
 
 export const Wrapper = styled.div`
@@ -43,6 +45,7 @@ export const Wrapper = styled.div`
   margin-bottom: 20px;
   @media (max-width: 450px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
