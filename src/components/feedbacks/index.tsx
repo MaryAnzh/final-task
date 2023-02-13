@@ -27,7 +27,7 @@ const Feedbacks = () => {
       perView: 4,
       spacing: 20,
     },
-    rtl: true,
+    // rtl: true,
     breakpoints: {
       '(max-width: 1000px)': {
         slides: {
@@ -50,6 +50,7 @@ const Feedbacks = () => {
     },
   });
   const [sliderRef, instanceRef] = useKeenSlider(options);
+
   useEffect(() => {
     FeedbackApi.getAllFeedbacks()
       .then(({ data }) => {
@@ -70,8 +71,8 @@ const Feedbacks = () => {
       </Wrapper>
       <SliderContainer ref={sliderRef} className={'keen-slider'}>
         {feedbacks &&
-          feedbacks.map(({ owner, avatar, content }) => (
-            <Slide className={'keen-slider__slide'}>
+          feedbacks.map(({ owner, avatar, content }, index) => (
+            <Slide className={'keen-slider__slide'} key={index}>
               <UserFace href={avatar} name={owner} />
               <Message>{content}</Message>
             </Slide>

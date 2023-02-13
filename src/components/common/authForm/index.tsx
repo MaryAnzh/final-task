@@ -118,8 +118,8 @@ const AuthForm = () => {
           !validPass(password) ||
           !validEmail(email) ||
           password.length === 0 ||
-          email.length === 0||
-          !validPass(name)||
+          email.length === 0 ||
+          !validPass(name) ||
           name.length === 0
         }
       >
