@@ -1,6 +1,6 @@
-import uknownUser from '@/assets/uknownUser.png';
-
 import { FC, useEffect, useState } from 'react';
+
+import unknownUser from '@/assets/unknownUser.png';
 
 import IUserFace from '@/interfaces/userFace';
 
@@ -23,7 +23,7 @@ const UserFace: FC<IUserFace> = ({ href, name }) => {
   return (
     <Wrapper>
       <Container>
-        <Avatar src={err ? uknownUser.src : href} onError={onError} />
+        <Avatar src={err ? unknownUser.src : href} onError={onError} />
         <Name>{name}</Name>
       </Container>
     </Wrapper>
