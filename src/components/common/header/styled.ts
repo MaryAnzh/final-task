@@ -20,6 +20,11 @@ export const HeaderWrap = styled.div`
 export const LeftHeaderWrap = styled.div`
     display: flex;
     align-items: center;
+
+    @media (max-width: 650px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `;
 
 export const RightHeaderWrap = styled.div`
@@ -27,4 +32,10 @@ export const RightHeaderWrap = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+      
+  @media (max-width: 650px) {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
 `;

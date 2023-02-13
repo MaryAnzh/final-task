@@ -1,5 +1,5 @@
-import { type } from "os";
-import styled from "styled-components";
+import { type } from 'os';
+import styled from 'styled-components';
 
 
 export const LocalesStyled = styled.div`

@@ -1,3 +1,4 @@
+import { IAuthTheme } from './authTheme';
 import { IHeaderTheme } from './headerTheme';
 import {IFooterTheme} from '@/interfaces/footerTheme'
 import {IContactPageTheme} from '@/interfaces/contactsTheme'
@@ -10,6 +11,8 @@ export enum ThemeEnum {
 export interface ITheme {
     background: string,
     color: string,
+    fontFamily: string,
+    titleFamily: string,
     variable: IColor,
     themeColor: IThemeColor,
     size: ISize,
@@ -49,6 +52,10 @@ export interface IThemeColor {
     title: string,
     link: string,
     contacts: IContactPageTheme
+    buttonBackground: string,
+    buttonTextColor: string,
+    buttonHover: string,
+    buttonActive: string,
 }
 
 export interface ISize {
