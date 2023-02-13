@@ -7,4 +7,6 @@ export const authForm_ru = {
   E_MAIL: 'Почта',
   VALID_PASS: 'Минимальная длинна пароля 3 символа',
   VALID_E_MAIL: 'Неверный формат адреса',
+  AVATAR: 'Фото',
+  NAME: 'Имя'
 };

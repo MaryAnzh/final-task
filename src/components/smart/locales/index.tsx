@@ -13,7 +13,7 @@ export const Locales = () => {
             </Link>
             <Link href={router} locale='ru'>
                 <LangRu lang={locale}>Ru</LangRu>
-            </Link> */}
+            </Link>
         </LocalesStyled>
     );
 }

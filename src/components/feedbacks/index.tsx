@@ -2,19 +2,21 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { useEffect, useState } from 'react';
 
-
-
 import IFeedback from '@/interfaces/feedback';
-
-
 
 import { FeedbackApi } from '@/pages/api';
 
-
-
 import UserFace from '../common/userFace';
-import { Button, ButtonContainer, Container, Message, Slide, SliderContainer, Title, Wrapper } from './styled';
-
+import {
+  Button,
+  ButtonContainer,
+  Container,
+  Message,
+  Slide,
+  SliderContainer,
+  Title,
+  Wrapper,
+} from './styled';
 
 const Feedbacks = () => {
   const [feedbacks, setFeedbacks] = useState<IFeedback[]>([]);
@@ -62,8 +64,8 @@ const Feedbacks = () => {
       <Wrapper>
         <Title>Feedbacks</Title>
         <ButtonContainer>
-          <Button onClick={instanceRef.current?.prev}>❮</Button>
-          <Button onClick={instanceRef.current?.next}>❯</Button>
+          <Button onClick={instanceRef.current?.next}>❮</Button>
+          <Button onClick={instanceRef.current?.prev}>❯</Button>
         </ButtonContainer>
       </Wrapper>
       <SliderContainer ref={sliderRef} className={'keen-slider'}>
