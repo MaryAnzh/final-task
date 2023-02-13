@@ -8,6 +8,7 @@ import { GlobalStyle } from '@/styles/global';
 import { StoreProvider } from '@/context';
 import { SessionProvider } from 'next-auth/react';
 
+
 export default function App({
   Component,
   pageProps: { session, ...pageProps },

@@ -1,5 +1,7 @@
-// import { IAuthTheme } from './authTheme';
+import { IAuthTheme } from './authTheme';
 import { IHeaderTheme } from './headerTheme';
+import {IFooterTheme} from '@/interfaces/footerTheme'
+import {IContactPageTheme} from '@/interfaces/contactsTheme'
 
 export enum ThemeEnum {
     light,
@@ -44,10 +46,12 @@ export interface IColor {
 
 export interface IThemeColor {
     header: IHeaderTheme,
+    footer: IFooterTheme,
     background: string,
     font: string,
     title: string,
     link: string,
+    contacts: IContactPageTheme
     buttonBackground: string,
     buttonTextColor: string,
     buttonHover: string,

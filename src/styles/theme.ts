@@ -1,4 +1,4 @@
-import { IColor, ITheme, ThemeEnum } from '../interfaces/theme.interface';
+import { IColor, ITheme, ThemeEnum } from '@/interfaces/theme.interface';
 import { DefaultTheme } from 'styled-components';
 
 const variable: IColor = {
@@ -56,6 +56,22 @@ export const theme: ITheme = {
             background: variable.mainExtraLight,
             activeLang: variable.mainDark2,
             desActiveLang: variable.mainLight,
+        },
+
+        footer: {
+            background: variable.mainDark2,
+            inputBackground: variable.mainLight2,
+            inputTextColor: variable.secondaryDark2,
+            buttonBackground: variable.contrastYellowLight2,
+            textColor: variable.contrastYellowLight2,
+            hrColor: 'rgba(0, 0, 0, 0.2)',
+            buttonColor: variable.secondaryDark2
+        },
+        contacts: {
+            descriptionSectionTextColor: variable.contrastYellowLight2,
+            descriptionSectionBackground: variable.mainDark2,
+            photosOverlay: variable.contrastYellow,
+            photoText: variable.secondaryDark2
         }
 
     },

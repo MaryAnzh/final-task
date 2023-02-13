@@ -1,4 +1,3 @@
-import { Inter } from '@next/font/google'
 import { useRouter } from 'next/router'
 import { en } from '@/data/locales/en'
 import { ru } from '@/data/locales/ru'
