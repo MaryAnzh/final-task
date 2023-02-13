@@ -22,16 +22,23 @@ import { useForm } from '@/hooks/useForm';
 
 import IUser from '@/interfaces/user';
 
-import { UserApi } from '@/utils/api';
+import { UserApi } from '@/pages/api/index';
+
 import validEmail from '@/utils/validEmail';
 import validPass from '@/utils/validPass';
 
+import uknownUser from '../../../assets/uknownUser.png';
 import { Button, Form, Title } from '../loginForm/styled';
 
 const AuthForm = () => {
-  const initialValue: IUser = { email: '', password: '' };
+  const initialValue: IUser = {
+    email: '',
+    password: '',
+    name: '',
+    image: '',
+  };
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
-  const { email, password } = values;
+  const { email, password, name, image } = values;
   const [state, dispatch] = useStore();
   const router = useRouter();
 
@@ -39,7 +46,6 @@ const AuthForm = () => {
     dispatch(userRequestCreator());
     try {
       e.preventDefault();
-
       const user = await UserApi.register(values);
       // setCookie(null, "rtoken", token, {
       //   maxAge: 60 * 60 * 2,
@@ -66,6 +72,26 @@ const AuthForm = () => {
       onSubmit={(e: FormEvent) => e.preventDefault()}
     >
       <Title>{t.AUYHORIZATION}</Title>
+      <CustomInput
+        // svg={<LockSVG />}
+        name={'name'}
+        type={'text'}
+        placeholder={'Имя'}
+        onChange={handleChange}
+        value={name}
+        err={t.VALID_E_MAIL}
+        valid={validEmail(email)}
+      />
+      <CustomInput
+        // svg={<LockSVG />}
+        name={'image'}
+        type={'text'}
+        placeholder={'Аvatar'}
+        onChange={handleChange}
+        value={image}
+        err={t.VALID_E_MAIL}
+        valid={validEmail(email)}
+      />
       <CustomInput
         svg={<LockSVG />}
         name={'email'}

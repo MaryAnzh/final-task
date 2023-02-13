@@ -1,13 +1,15 @@
-import ISession from '@/interfaces/session';
-import { UserApi } from '@/pages/api';
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GitProviders from 'next-auth/providers/github';
 
+import ISession from '@/interfaces/session';
+
+import { UserApi } from '@/pages/api';
+
 const authOptions: NextAuthOptions = {
-  session: {
-    strategy: 'jwt',
-  },
+  // session: {
+  //   strategy: 'jwt',
+  // },
   providers: [
     GitProviders({
       clientId: '15a4916064ee2e32aeef',
@@ -25,8 +27,7 @@ const authOptions: NextAuthOptions = {
           password,
           email: username,
         });
-
-        return { id: user._id, email: user.email, token };
+        return { id: user._id, email: user.email, name: user.name, image: user.image,token };
       },
     }),
   ],

@@ -13,7 +13,6 @@ import { AppWrapper, MainStyled } from './styled';
 export const Layout = ({ children }: PropsWithChildren) => {
   const [state, dispatch] = useStore();
   const { data: user, loading, authorization } = state;
-
   useEffect(() => {
     if (!authorization) {
       dispatch({ type: authConstants.LOGIN_REQUEST });
