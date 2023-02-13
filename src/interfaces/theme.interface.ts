@@ -1,4 +1,3 @@
-import { IAuthTheme } from './authTheme';
 import { IHeaderTheme } from './headerTheme';
 import {IFooterTheme} from '@/interfaces/footerTheme'
 import {IContactPageTheme} from '@/interfaces/contactsTheme'

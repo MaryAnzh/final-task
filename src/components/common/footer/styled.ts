@@ -9,7 +9,7 @@ export const FooterStyled = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
 `;
 
 export const FooterContainer = styled.div`
@@ -56,13 +56,13 @@ export const FirstRowLeft = styled.div`
 `;
 
 export const FirstRowTitle = styled.h2`
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   font-size: 25px;
 `;
 
 export const FirstRowText = styled.p`
   color: white;
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   margin-top: 20px;
   font-size: 13px;
   line-height: 1.4;
@@ -93,11 +93,11 @@ export const FirstRowInput = styled.input`
   color: ${({ theme }) => theme.themeColor.footer.inputTextColor};;
   box-shadow: inset 0 0 0 white;
   transition: 0.6s all;
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   font-weight: 100;
   
   &:focus {
-    box-shadow: inset 0 0 55px white;
+    box-shadow: inset 0 0 55px ${({ theme }) => theme.themeColor.footer.textColor};
     background-color: rgba(255, 255, 255, 0.8);
   }
 
@@ -111,7 +111,7 @@ export const FirstRowInput = styled.input`
 `;
 
 export const FirstRowButton = styled.button`
-  background-color: #fffffd;
+  background-color: ${({ theme }) => theme.themeColor.footer.buttonBackground};
   color: ${({ theme }) => theme.themeColor.footer.buttonColor};
   outline: none;
   border: none;
@@ -169,13 +169,13 @@ export const SecondRowLeftPart = styled.div`
 
 export const SecondRowImage = styled.img`
   margin-bottom: 10px;
-  fill: white;
-  stroke: white;
+  fill: ${({ theme }) => theme.themeColor.footer.textColor};
+  stroke: ${({ theme }) => theme.themeColor.footer.textColor};
 `;
 
 export const SecondRowText = styled.p`
   font-weight: 300;
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   font-size: 11px;
   max-width: 250px;
   margin-top: 7px;
@@ -249,5 +249,5 @@ export const ThirdRow = styled.div`
 export const ThirdRowCopyright = styled.span`
   font-weight: 100;
   font-size: 12px;
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
 `;

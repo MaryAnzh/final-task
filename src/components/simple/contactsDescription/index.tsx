@@ -1,21 +1,18 @@
-import {router} from 'next/client'
-import {ContactsContent, ContactsDescriptionTitle, ContactsDescriptionWrapper, ContactsDescriptionText} from './styled'
-import {en} from '@/data/locales/en'
-import {ru} from '@/data/locales/ru'
+import {ContactsContent, ContactsDescriptionTitle, ContactsDescriptionWrapper, ContactsDescriptionText} from './styled';
+import { contacts_en as en } from '@/data/locales/contacts_en';
+import { contacts_ru as ru } from '@/data/locales/contacts_ru';
+import {useRouter} from 'next/dist/client/router'
 
 
 export const ContactsDescription = (): JSX.Element => {
+    const router = useRouter();
+    const t = router.locale === 'en' ? en : ru;
 
     return (
         <ContactsDescriptionWrapper>
             <ContactsContent>
-                <ContactsDescriptionTitle>Our team</ContactsDescriptionTitle>
-                <ContactsDescriptionText>We do what we love. Doing our job well
-                    We are proud of the team. We are continuously developing
-                    We work flexibly and openly. Showing the result
-                    Building long-term partnerships. <br/>
-                    We create IT solutions. Together with our clients we make the world
-                    more comfortable and perfect</ContactsDescriptionText>
+                <ContactsDescriptionTitle>{t.TITLE}</ContactsDescriptionTitle>
+                <ContactsDescriptionText>{t.DESCRIPTION}</ContactsDescriptionText>
             </ContactsContent>
         </ContactsDescriptionWrapper>
     )

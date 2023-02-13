@@ -6,4 +6,5 @@ export interface IFooterTheme {
     buttonColor: string
     textColor: string
     hrColor: string
+    black: string
 }

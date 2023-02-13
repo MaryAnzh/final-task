@@ -1,22 +1,24 @@
-import { en } from '@/data/locales/en';
-import { ru } from '@/data/locales/ru';
+import { contacts_ru as ru } from '@/data/locales/contacts_ru';
+import { contacts_en as en } from '@/data/locales/contacts_en';
 import { useRouter } from 'next/router';
 import {ContactsDescription} from '@/components/simple/contactsDescription'
 import {ContactsProfilesList} from '@/components/containers/contactsProfilesList'
 import {ContactProfile} from '@/interfaces/contactsPersonData'
 
-const workers: Array<ContactProfile> = [
-    {name: 'Dmitry Baranov', duty: 'Front End Developer', photo: '/user.png'},
-    {name: 'Maryia Vashchayeva', duty: 'CEO, Team lead', photo: '/user.png'},
-    {name: 'Nikita Slutski', duty: 'Software Engineer', photo: '/user.png'},
-    {name: 'Dzmitry Iliukovich', duty: 'Mentor', photo: '/user.png'},
-    {name: 'Free vacancy (Our future colleague)', duty: 'JavaScript Developer', photo: '/user.png'},
-    {name: 'Free vacancy (Our future colleague)', duty: 'JavaScript Programmer', photo: '/user.png'},
-]
+
 
 export default function Contacts() {
     const router = useRouter();
     const t = router.locale === 'en' ? en : ru;
+
+    const workers: Array<ContactProfile> = [
+        {name: t.WORKERS.DMITRY.NAME, duty: t.WORKERS.DMITRY.JOB, photo: '/user.png'},
+        {name: t.WORKERS.MARYA.NAME, duty: t.WORKERS.MARYA.JOB, photo: '/user.png'},
+        {name: t.WORKERS.NIKITA.NAME, duty: t.WORKERS.NIKITA.JOB, photo: '/user.png'},
+        {name: t.WORKERS.MENTOR_DMITRY.NAME, duty: t.WORKERS.MENTOR_DMITRY.JOB, photo: '/user.png'},
+        {name: t.WORKERS.FREE_VACANCY.NAME, duty: t.WORKERS.FREE_VACANCY.JOB, photo: '/user.png'},
+        {name: t.WORKERS.FREE_VACANCY.NAME, duty: t.WORKERS.FREE_VACANCY.JOB, photo: '/user.png'},
+    ]
 
     return (
         <>

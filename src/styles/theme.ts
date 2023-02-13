@@ -65,7 +65,8 @@ export const theme: ITheme = {
             buttonBackground: variable.contrastYellowLight2,
             textColor: variable.contrastYellowLight2,
             hrColor: 'rgba(0, 0, 0, 0.2)',
-            buttonColor: variable.secondaryDark2
+            buttonColor: variable.secondaryDark2,
+            black: variable.secondaryDark2
         },
         contacts: {
             descriptionSectionTextColor: variable.contrastYellowLight2,

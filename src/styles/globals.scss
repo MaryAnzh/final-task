@@ -19,6 +19,29 @@ body {
   font-size: 1em;
 }
 
+body {
+  overflow-y: scroll;
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+  --scroll-background: #FFFFFF;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scroll-background);
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #495A7D;
+  border-radius: 20px;
+  width: 7px;
+}
+
 footer {
   flex-shrink: 0;
 }

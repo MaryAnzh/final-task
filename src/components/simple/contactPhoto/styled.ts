@@ -40,6 +40,7 @@ export const Name = styled.h1`
   font-weight: 900;
   color: ${({ theme }) => theme.themeColor.contacts.photoText};
   font-size: 20px;
+  font-family: ${({ theme }) => theme.fontFamily};
 `
 
 export const Duty = styled.h2`
@@ -47,4 +48,5 @@ export const Duty = styled.h2`
   color: ${({ theme }) => theme.themeColor.contacts.photoText};
   font-size: 16px;
   margin-top: 3px;
+  font-family: ${({ theme }) => theme.fontFamily};
 `

@@ -17,14 +17,14 @@ export const ContactsContent = styled.div`
 `
 
 export const ContactsDescriptionTitle = styled.h1`
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   font-size: 35px;
   font-weight: 900;
   color: ${({ theme }) => theme.themeColor.contacts.descriptionSectionTextColor};
 `
 
 export const ContactsDescriptionText = styled.p`
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   color: ${({ theme }) => theme.themeColor.contacts.descriptionSectionTextColor};
   font-size: 14px;
   max-width: 400px;
