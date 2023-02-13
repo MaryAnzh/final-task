@@ -11,7 +11,7 @@ const UserFace: FC<IUserFace> = ({ href, name }) => {
   const onError = () => {
     setError(true);
   };
-
+  /* eslint-disable */
   useEffect(() => {
     fetch(href).then((res) => {
       if (!res.ok) {
@@ -19,7 +19,7 @@ const UserFace: FC<IUserFace> = ({ href, name }) => {
       }
     });
   }, []);
-
+  /* eslint-enable */
   return (
     <Wrapper>
       <Container>

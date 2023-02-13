@@ -50,7 +50,7 @@ const Feedbacks = () => {
     },
   });
   const [sliderRef, instanceRef] = useKeenSlider(options);
-
+  /* eslint-disable */
   useEffect(() => {
     FeedbackApi.getAllFeedbacks()
       .then(({ data }) => {
@@ -59,7 +59,7 @@ const Feedbacks = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-
+  /* eslint-enable */
   return (
     <Container>
       <Wrapper>
