@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 export const StarSVGStyled = styled.div`
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 75%;
-    top: -50px;
+    left: 15%;
+    top: -30px;
     border-radius: 50%;
     cursor: pointer;
     transition: all .3s;
@@ -20,8 +20,7 @@ export const StarSVGStyled = styled.div`
         width: 70%;
         height: 70%;
         border-radius: 50%;
-        border: 1px dotted ${({ theme }) => theme.variable.mainExtraLight};
-        box-shadow: inset 5px 5px 5px ${({ theme }) => theme.variable.mainDark};
+        border: 1px dashed ${({ theme }) => theme.variable.mainExtraLight};
         z-index: 4;
         pointer-events: none;  
     }
@@ -34,7 +33,8 @@ export const StarSVGStyled = styled.div`
         border-radius: 50%;
         background: ${({ theme }) => theme.variable.main};
         opacity: .5;
-        z-index: 4;
+        box-shadow: inset 0px 0px 5px ${({ theme }) => theme.variable.mainDark};
+        z-index: 3;
         pointer-events: none;
     }
 
