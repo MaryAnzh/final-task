@@ -47,6 +47,8 @@ export const theme: ITheme = {
         buttonTextColor: variable.mainExtraLight,
         buttonHover: variable.mainDark2,
         buttonActive: variable.mainLight,
+        cardBackground: variable.mainLight,
+        cardFontColor: variable.mainDark,
         header: {
             logoFill: variable.secondary,
             logoStroke: variable.mainDark2,

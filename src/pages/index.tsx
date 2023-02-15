@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import {Inter} from '@next/font/google'
+import { Inter } from '@next/font/google'
 import { en } from '@/data/locales/en'
 import { ru } from '@/data/locales/ru'
 import { AnimationBlock } from '@/components/smart/animation-block'
@@ -8,6 +8,7 @@ import { TeamInfoBlock } from '@/components/simple/teem-info-block'
 import { AboutPageWrap, TeamsBackground } from './styled'
 // import '../index.css'
 import Feedbacks from '@/components/feedbacks'
+import { TeamAnimationBlock } from '@/components/containers/team-anination-block'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -19,8 +20,9 @@ export default function Home() {
       <AnimationBlock />
       <TeamsBackground />
       <TeamInfoArticle />
+      <TeamAnimationBlock />
       <TeamInfoBlock />
-      <Feedbacks/>
+      <Feedbacks />
     </AboutPageWrap>
   )
 }
