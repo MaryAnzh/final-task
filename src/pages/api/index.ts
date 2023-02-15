@@ -1,11 +1,15 @@
 import axios from 'axios';
 
+
+
 import IFeedback from '@/interfaces/feedback';
 import { ILoginRes, IRegisterResp } from '@/interfaces/response';
 import IUser from '@/interfaces/user';
+import { RoutingEnum } from '@/data/constants/routing';
+
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: RoutingEnum.serverDeploy,
 });
 
 export const UserApi = {
