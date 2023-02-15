@@ -10,4 +10,9 @@ export const TeamAnimationBlockWrap = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 660px) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 `;

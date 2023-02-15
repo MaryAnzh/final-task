@@ -17,6 +17,9 @@ export const TeamInfoWrap = styled.article`
     margin-bottom: 30px;
     line-height: 1.6;
     
+    @media (max-width: 760px) {
+        background: none;
+    }
 `;
 
 export const AboutTeamWorkTitle = styled.h3`
@@ -26,6 +29,11 @@ export const AboutTeamWorkTitle = styled.h3`
     font-family: ${({theme}) => theme.titleFamily};
     font-weight: 600;
     color: ${({theme}) => theme.themeColor.font};
+
+    @media (max-width: 760px) {
+        max-width: 100%;
+        width: 100%;
+    }
 `;
 
 export const AboutTeamWorkText = styled.p`
@@ -34,5 +42,9 @@ export const AboutTeamWorkText = styled.p`
 
     &::first-letter {
         padding-left: 10px;
+    }
+    @media (max-width: 760px) {
+        max-width: 100%;
+        width: 100%;
     }
 `;
