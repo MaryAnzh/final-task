@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const TeamAnimationBlockWrap = styled.div`
     width: 250px;
     height: 200px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: scale(0.75) rotateY(-30deg) rotateX(45deg) translateZ(4.5rem);
+    border-radius: 4px;
+    transform: scale(0.75) rotateY(-35deg) rotateX(45deg) translateZ(4.5rem);
     transform-origin: 50% 100%;
     transform-style: preserve-3d;
     box-shadow: 1rem 1rem 2rem rgb(0 0 0 / 25%);
@@ -27,7 +29,7 @@ export const TeamAnimationBlockWrap = styled.div`
         width: 90%;
         height: 90%;
         opacity: 0;
-
+        transition: all .3s;
         img {
             width: 80px;
             height: 80px;
@@ -41,29 +43,44 @@ export const TeamAnimationBlockWrap = styled.div`
         }
     }
 
-     &:hover {
-      transform: scale(1);
+    &::before {
+      position: absolute;
+      content: '';
+      width: 250px;
+      height: 200px;
+      background: ${({ theme }) => theme.variable.main};
+      border-radius: 4px;
+      opacity: 1;
+      transform: translateZ(-3rem);
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 250px;
+      height: 200px;
+      border-radius: 4px;
+      border: 2px dotted ${({ theme }) => theme.variable.mainDark};
+      transform: translateZ(1rem);
+      opacity: 1;
+      transition: all .3s;
+    }
+
+    &:hover {
+      transform: translateZ(0);
 
       h3 {
         opacity: 0;
       }
+
       figure {
         opacity: 1;
       }
-    }
 
-    &::before {
-      transform: translateZ(4rem);
-      
-      &:hover {
-        transform: translateZ(0);
-       }
-    }
-
-    &::after {
-      transform: translateZ(-4rem);
-      &:hover {
-        transform: translateZ(-1px);
+      &::after {
+        opacity: 0;
       }
     }
+
+
 `;
