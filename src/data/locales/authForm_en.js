@@ -7,4 +7,6 @@ export const authForm_en = {
   E_MAIL: 'E-Mail',
   VALID_PASS: 'Minimum 3 characters',
   VALID_E_MAIL: 'Invalid address format',
+  AVATAR: 'Avatar',
+  NAME: 'Name',
 };

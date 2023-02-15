@@ -8,7 +8,9 @@ export interface ILoginRes {
     token: string
     user: {
       _id: string,
-      email: string
+      email: string,
+      name: string,
+      image: string
     }
   }
 

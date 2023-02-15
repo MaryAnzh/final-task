@@ -22,16 +22,23 @@ import { useForm } from '@/hooks/useForm';
 
 import IUser from '@/interfaces/user';
 
-import { UserApi } from '@/utils/api';
+import { UserApi } from '@/pages/api/index';
+
 import validEmail from '@/utils/validEmail';
 import validPass from '@/utils/validPass';
+import validateURL from '@/utils/validUrl';
 
 import { Button, Form, Title } from '../loginForm/styled';
 
 const AuthForm = () => {
-  const initialValue: IUser = { email: '', password: '' };
+  const initialValue: IUser = {
+    email: '',
+    password: '',
+    name: '',
+    image: '',
+  };
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
-  const { email, password } = values;
+  const { email, password, name, image } = values;
   const [state, dispatch] = useStore();
   const router = useRouter();
 
@@ -39,7 +46,6 @@ const AuthForm = () => {
     dispatch(userRequestCreator());
     try {
       e.preventDefault();
-
       const user = await UserApi.register(values);
       // setCookie(null, "rtoken", token, {
       //   maxAge: 60 * 60 * 2,
@@ -67,6 +73,26 @@ const AuthForm = () => {
     >
       <Title>{t.AUYHORIZATION}</Title>
       <CustomInput
+        // svg={<LockSVG />}
+        name={'name'}
+        type={'text'}
+        placeholder={t.NAME}
+        onChange={handleChange}
+        value={name}
+        err={t.VALID_PASS}
+        valid={validPass(name)}
+      />
+      <CustomInput
+        // svg={<LockSVG />}
+        name={'image'}
+        type={'text'}
+        placeholder={t.AVATAR}
+        onChange={handleChange}
+        value={image}
+        err={t.VALID_E_MAIL}
+        valid={validateURL(image)}
+      />
+      <CustomInput
         svg={<LockSVG />}
         name={'email'}
         type={'email'}
@@ -92,7 +118,9 @@ const AuthForm = () => {
           !validPass(password) ||
           !validEmail(email) ||
           password.length === 0 ||
-          email.length === 0
+          email.length === 0 ||
+          !validPass(name) ||
+          name.length === 0
         }
       >
         {state.loading ? <Spinner /> : t.SIGN_UP}

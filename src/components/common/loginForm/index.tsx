@@ -4,34 +4,45 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, FormEvent } from 'react';
 
+
+
 import CustomInput from '@/components/simple/customInput';
 import LockSVG from '@/components/simple/lockSVG';
 import PostSVG from '@/components/simple/postSVG';
 import Spinner from '@/components/simple/spinner';
 
+
+
 import { useStore } from '@/context';
-import {
-  userFailCreator,
-  userLoginCreator,
-  userRequestCreator,
-} from '@/context/actions';
+import { userFailCreator, userLoginCreator, userRequestCreator } from '@/context/actions';
 import { TStore } from '@/context/interfaces';
+
+
 
 import { RoutingEnum } from '@/data/constants/routing';
 import { loginForm_en as en } from '@/data/locales/loginForm_en';
 import { loginForm_ru as ru } from '@/data/locales/loginForm_ru';
 
+
+
 import { useForm } from '@/hooks/useForm';
 
+
+
 import IUser from '@/interfaces/user';
+
+
 
 import validEmail from '@/utils/validEmail';
 import validPass from '@/utils/validPass';
 
+
+
 import { Button, Form, Title } from './styled';
 
+
 export const LoginForm: FC = () => {
-  const initialValue: IUser = { email: '', password: '' };
+  const initialValue: IUser = { email: '', password: '', name: '', image: '' };
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
   const { email, password } = values;
   const router = useRouter();
@@ -65,8 +76,8 @@ export const LoginForm: FC = () => {
   };
 
   const handleGithabSignIn = async () => {
-    signIn('github', { callbackUrl: RoutingEnum.baseUrl });
-  };
+    await signIn('github', { callbackUrl: RoutingEnum.baseUrl })
+    };
 
   if (state.authorization) {
     router.replace('/');
