@@ -14,6 +14,7 @@ export const AboutPageWrap = styled.div`
 export const TeamsBackground = styled.div`
    width: 100%;
    height: 300px;
+   position: relative;
    background-repeat: no-repeat;
    background-position: center;
    background-size: 1200px;

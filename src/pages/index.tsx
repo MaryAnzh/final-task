@@ -6,9 +6,11 @@ import { AnimationBlock } from '@/components/smart/animation-block'
 import { TeamInfoArticle } from '@/components/common/info-article/team-info'
 import { TeamInfoBlock } from '@/components/simple/teem-info-block'
 import { AboutPageWrap, TeamsBackground } from './styled'
-// import '../index.css'
+
 import Feedbacks from '@/components/feedbacks'
 import { TeamAnimationBlock } from '@/components/containers/team-anination-block'
+import { StarSCG } from '@/components/simple/starSVG'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -18,7 +20,9 @@ export default function Home() {
   return (
     <AboutPageWrap>
       <AnimationBlock />
-      <TeamsBackground />
+      <TeamsBackground>
+        <StarSCG />
+      </TeamsBackground>
       <TeamInfoArticle />
       <TeamAnimationBlock />
       <TeamInfoBlock />
