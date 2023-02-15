@@ -46,8 +46,8 @@ export const TeamAnimationBlockWrap = styled.div`
     &::before {
       position: absolute;
       content: '';
-      width: 250px;
-      height: 200px;
+      width: 100%;
+      height: 100%;
       background: ${({ theme }) => theme.variable.main};
       border-radius: 4px;
       opacity: 1;
@@ -81,6 +81,4 @@ export const TeamAnimationBlockWrap = styled.div`
         opacity: 0;
       }
     }
-
-
 `;

@@ -11,7 +11,7 @@ export const TeamAnimationBlockWrap = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 660px) {
+    @media (max-width: 760px) {
         flex-wrap: wrap;
         justify-content: space-around;
     }

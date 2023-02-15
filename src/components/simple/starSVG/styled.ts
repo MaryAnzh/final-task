@@ -8,7 +8,7 @@ export const StarSVGStyled = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 15%;
+    left: 52.4%;
     top: -30px;
     border-radius: 50%;
     cursor: pointer;

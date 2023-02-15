@@ -30,7 +30,7 @@ export const AboutTeamWorkTitle = styled.h3`
     font-weight: 600;
     color: ${({theme}) => theme.themeColor.font};
 
-    @media (max-width: 760px) {
+    @media (max-width: 800ypx) {
         max-width: 100%;
         width: 100%;
     }
