@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const SliderContainer = styled.div`
   max-width: 1050px;
   @media (max-width: 1000px) {
@@ -22,7 +23,7 @@ export const Slide = styled.div`
 
 export const Message = styled.p`
   max-width: 200px;
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   font-size: 14px;
 `;
 

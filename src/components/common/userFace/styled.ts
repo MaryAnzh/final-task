@@ -19,7 +19,7 @@ export const Avatar = styled.img`
 `;
 
 export const Name = styled.h4`
-  font-family: 'Readex Pro', sans-serif;
+  font-family: ${({ theme }) => theme.fontFamily};
   font-size: 14px;
   font-weight: 600;
 `;
