@@ -9,7 +9,7 @@ export const TeamInfoWrap = styled.article`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-image: url(./img/team-info.png);
+    background-image: url(img/team-info.png);
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: center;
