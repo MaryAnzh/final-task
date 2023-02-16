@@ -5,6 +5,8 @@ export const ModalWindowStyled = styled.div`
    width: 100%;
    min-height: ${({ style }) => style?.minHeight};
    padding: 20px;
+   display: flex;
+   flex-direction: column;
    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
    border-radius: 8px;
    background: ${({ theme }) => theme.themeColor.modalBackground};

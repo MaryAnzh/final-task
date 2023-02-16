@@ -18,5 +18,5 @@ export const en = {
     TEAM_MASHA_INFO: 'Teamlead. Creative, responsible, fond of CSS animation',
     TEAM_NIKITA_INFO: 'Active, executive, inquisitive. Always has its own vision of the problem that stands for',
     TEAM_DIMA_INFO: 'Responsible, executive, If there is a problem, then it will definitely solve it',
-
+    APP_FEAT: 'Capabilities of our application',
 };

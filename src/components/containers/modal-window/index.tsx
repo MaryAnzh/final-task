@@ -1,3 +1,5 @@
+import { CloseButton } from "@/components/common/close-button";
+import { AppFeature } from "../app-featuare";
 import { ModalWindowStyled } from "./styled";
 
 type ModalWindowType = {
@@ -10,8 +12,13 @@ export const ModalWindow = (props: ModalWindowType) => {
         maxWidth: `${props.width}px`,
         minHeight: `${props.hight}px`,
     }
+    const fn = () => { console.log('Ku-ku') }
 
     return (
-        <ModalWindowStyled style={style} />
+
+        <ModalWindowStyled style={style}>
+            <CloseButton callback={fn} />
+            <AppFeature />
+        </ModalWindowStyled>
     );
 }

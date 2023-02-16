@@ -12,6 +12,7 @@ import { TeamAnimationBlock } from '@/components/containers/team-anination-block
 import { StarSCG } from '@/components/simple/starSVG'
 import { PopUpStyled } from '@/components/containers/pop-up/styled'
 import { ModalWindow } from '@/components/containers/modal-window'
+import { AppFeature } from '@/components/containers/app-featuare'
 
 const inter = Inter({ subsets: ['latin'] })
 
