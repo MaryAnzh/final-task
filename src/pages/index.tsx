@@ -10,6 +10,8 @@ import { AboutPageWrap, TeamsBackground } from './styled'
 import Feedbacks from '@/components/feedbacks'
 import { TeamAnimationBlock } from '@/components/containers/team-anination-block'
 import { StarSCG } from '@/components/simple/starSVG'
+import { PopUpStyled } from '@/components/containers/pop-up/styled'
+import { ModalWindow } from '@/components/containers/modal-window'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,6 +21,9 @@ export default function Home() {
 
   return (
     <AboutPageWrap>
+      <PopUpStyled>
+        <ModalWindow width='900' hight='500' />
+      </PopUpStyled>
       <AnimationBlock />
       <TeamsBackground>
         <StarSCG />

@@ -6,6 +6,8 @@ export const TeamInfoWrap = styled.article`
     min-height: 300px;
     height: fit-content;
     padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -14,7 +16,6 @@ export const TeamInfoWrap = styled.article`
     background-position-x: left;
     background-position-y: center;
     background-size: 48%;
-    margin-bottom: 30px;
     line-height: 1.6;
     
     @media (max-width: 760px) {

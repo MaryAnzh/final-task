@@ -49,6 +49,7 @@ export const theme: ITheme = {
         buttonActive: variable.mainLight,
         cardBackground: variable.mainLight,
         cardFontColor: variable.mainDark,
+        modalBackground: 'white',
         header: {
             logoFill: variable.secondary,
             logoStroke: variable.mainDark2,

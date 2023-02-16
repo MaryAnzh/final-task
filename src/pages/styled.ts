@@ -6,6 +6,8 @@ const k = bgHight / bgWidth;
 
 export const AboutPageWrap = styled.div`
     width: 100%;
+    height: fit-content;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
