@@ -7,7 +7,7 @@ type CloseButtonType = {
 export const CloseButton = (props: CloseButtonType) => {
 
     return (
-        <CloseButtonStyled></CloseButtonStyled>
+        <CloseButtonStyled onClick={props.callback}></CloseButtonStyled>
     );
 
 }

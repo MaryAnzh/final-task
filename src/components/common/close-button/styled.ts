@@ -8,7 +8,7 @@ export const CloseButtonStyled = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: ${({ theme }) => theme.themeColor.buttonBackground};
+  background: ${({ theme }) => theme.themeColor.closeButtonBackground};
   align-self: flex-end;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, .2);
   cursor: pointer;
@@ -18,8 +18,8 @@ export const CloseButtonStyled = styled.div`
   &::before {
       content: '';
       position: absolute;
-      width: 28px;
-      height: 4px;
+      width: 25px;
+      height: 2px;
       border-radius: 2px;
       background: ${({ theme }) => theme.themeColor.buttonTextColor};
   }
@@ -32,8 +32,13 @@ export const CloseButtonStyled = styled.div`
   }
 
   &:hover {
-    background: ${({ theme }) => theme.themeColor.buttonHover};
+    background: ${({ theme }) => theme.themeColor.closeButtonHover};
     box-shadow: none;
+  }
+
+  &:active {
+    background: ${({ theme }) => theme.themeColor.buttonActive};
+
   }
 
 `;

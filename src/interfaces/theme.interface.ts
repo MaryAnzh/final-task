@@ -58,6 +58,8 @@ export interface IThemeColor {
     cardBackground: string,
     cardFontColor: string,
     modalBackground: string,
+    closeButtonBackground: string,
+    closeButtonHover: string,
 }
 
 export interface ISize {

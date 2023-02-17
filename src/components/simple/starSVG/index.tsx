@@ -1,14 +1,18 @@
 
 import { useRouter } from 'next/router';
 import { en } from '../../../data/locales/en';
-import { ru } from '../../../data/locales/ru';import { StarSVGStyled } from './styled';
+import { ru } from '../../../data/locales/ru'; import { StarSVGStyled } from './styled';
 
-export const StarSCG = (): JSX.Element => {
+type StarSCGType = {
+  onClick: () => void,
+}
+
+export const StarSCG = (props: StarSCGType): JSX.Element => {
   const router = useRouter();
   const t = router.locale === 'en' ? en : ru;
-  
+
   return (
-    <StarSVGStyled>
+    <StarSVGStyled onClick={props.onClick}>
       <svg
         className='star-svg'
         xmlns='http://www.w3.org/2000/svg'

@@ -50,6 +50,8 @@ export const theme: ITheme = {
         cardBackground: variable.mainLight,
         cardFontColor: variable.mainDark,
         modalBackground: 'white',
+        closeButtonBackground: variable.mainLight,
+        closeButtonHover: variable.main,
         header: {
             logoFill: variable.secondary,
             logoStroke: variable.mainDark2,

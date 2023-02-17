@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useRouter } from 'next/router'
 import { Inter } from '@next/font/google'
 import { en } from '@/data/locales/en'
@@ -20,14 +21,28 @@ export default function Home() {
   const router = useRouter();
   const t = router.locale === 'en' ? en : ru;
 
+  const [isModalOpen, setShowCloseModal] = useState(false);
+
+  const showModalOnClick = () => {
+    setShowCloseModal((prevState) => prevState = true)
+  }
+
+  const closeModalOnClick = () => {
+    setShowCloseModal((prevState) => prevState = false)
+  }
+
+
   return (
     <AboutPageWrap>
-      <PopUpStyled>
-        <ModalWindow width='900' hight='500' />
-      </PopUpStyled>
+      {
+        isModalOpen &&
+        <PopUpStyled>
+          <ModalWindow width='900' hight='500' close={closeModalOnClick}/>
+        </PopUpStyled>
+      }
       <AnimationBlock />
       <TeamsBackground>
-        <StarSCG />
+        <StarSCG onClick={showModalOnClick} />
       </TeamsBackground>
       <TeamInfoArticle />
       <TeamAnimationBlock />
