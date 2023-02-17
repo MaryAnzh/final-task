@@ -3,6 +3,7 @@ import { en } from '../../../data/locales/en';
 import { ru } from '../../../data/locales/ru';
 import { AnimatedTeamMemberCard } from "@/components/smart/animated-team-member-card";
 import masha from '@/assets/img/masha.jpg';
+import dima from '@/assets/photo/dima.png';
 import user from '@/assets/img/login.svg';
 
 import { TeamAnimationBlockWrap } from "./styled";
@@ -25,7 +26,7 @@ export const TeamAnimationBlock = () => {
         }
         if (member === 3) {
             name = t.TEAM_DIMA_NAME;
-            photo = user;
+            photo = dima;
             text = t.TEAM_DIMA_INFO;
         }
         return (
