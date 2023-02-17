@@ -22,6 +22,7 @@ export const CloseButtonStyled = styled.div`
       height: 2px;
       border-radius: 2px;
       background: ${({ theme }) => theme.themeColor.buttonTextColor};
+      pointer-events: none;
   }
   
   &::after {
@@ -38,7 +39,6 @@ export const CloseButtonStyled = styled.div`
 
   &:active {
     background: ${({ theme }) => theme.themeColor.buttonActive};
-
   }
 
 `;

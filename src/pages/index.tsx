@@ -11,9 +11,7 @@ import { AboutPageWrap, TeamsBackground } from './styled'
 import Feedbacks from '@/components/feedbacks'
 import { TeamAnimationBlock } from '@/components/containers/team-anination-block'
 import { StarSCG } from '@/components/simple/starSVG'
-import { PopUpStyled } from '@/components/containers/pop-up/styled'
-import { ModalWindow } from '@/components/containers/modal-window'
-import { AppFeature } from '@/components/containers/app-featuare'
+import { PopUp } from '@/components/containers/pop-up';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,21 +22,18 @@ export default function Home() {
   const [isModalOpen, setShowCloseModal] = useState(false);
 
   const showModalOnClick = () => {
-    setShowCloseModal((prevState) => prevState = true)
+    setShowCloseModal((prev) => prev = true);
   }
 
   const closeModalOnClick = () => {
-    setShowCloseModal((prevState) => prevState = false)
+    setShowCloseModal((prev) => prev = false);
   }
-
 
   return (
     <AboutPageWrap>
       {
         isModalOpen &&
-        <PopUpStyled>
-          <ModalWindow width='900' hight='500' close={closeModalOnClick}/>
-        </PopUpStyled>
+        <PopUp isOpen={isModalOpen} closePopUp={closeModalOnClick}/>
       }
       <AnimationBlock />
       <TeamsBackground>
