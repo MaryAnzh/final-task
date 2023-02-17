@@ -26,5 +26,7 @@ export const contacts_ru = {
             NAME: 'Свободный слот (здесь будет будущий коллега)',
             JOB: 'JavaScript разработчик'
         }
-    }
+    },
+
+    ALLOCATION_TITLE: 'Где мы находимся'
 }

@@ -3,4 +3,5 @@ export interface IContactPageTheme {
     descriptionSectionTextColor: string
     photosOverlay: string
     photoText: string
+    allocationTitleText: string
 }
