@@ -15,7 +15,8 @@ export const CarouselContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: lightblue;
+  mask-image: linear-gradient(to left, transparent 0%, black 30%, black 70%, transparent 100%);
+  background: ${({theme}) => theme.themeColor.cardBackground};
 `;
 
 export const CarouselBodyWrap = styled.div`
@@ -28,6 +29,11 @@ export const CarouselBodyWrap = styled.div`
   transform-style: preserve-3d;
   transition: all .3s;
   transform:  rotateX(-6deg) translateY(-40px);
+
+  @media (max-width: 600px) {
+    overflow: hidden;
+  }
+
 `;
 
 export const CarouselBody = styled.div`
