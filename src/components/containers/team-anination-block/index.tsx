@@ -4,7 +4,7 @@ import { ru } from '../../../data/locales/ru';
 import { AnimatedTeamMemberCard } from "@/components/smart/animated-team-member-card";
 import masha from '@/assets/img/masha.jpg';
 import dima from '@/assets/photo/dima.png';
-import user from '@/assets/img/login.svg';
+import nikita from '@/assets/photo/nikita.png';
 
 import { TeamAnimationBlockWrap } from "./styled";
 import { StaticImageData } from 'next/image';
@@ -21,7 +21,7 @@ export const TeamAnimationBlock = () => {
 
         if (member === 2) {
             name = t.TEAM_NIKITA_NAME;
-            photo = user;
+            photo = nikita;
             text = t.TEAM_NIKITA_INFO;
         }
         if (member === 3) {

@@ -12,8 +12,6 @@ export const AnimatedTeamMemberCard = (props: AnimatedTeamMemberCardProps) => {
 
     return (
         <TeamAnimationBlockWrap>
-            {/* <p>{props.text}</p> */}
-            {/* <p className="card-team-member-name">Имя</p> */}
             <h3>{props.name}</h3>
             <figure>
                 <Image
