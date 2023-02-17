@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const ModalWindowStyled = styled.div`
-   max-width: ${({ style }) => style?.maxWidth};
+   max-width: 900px;
    width: 100%;
-   min-height: ${({ style }) => style?.minHeight};
+   min-height: 500px;
    padding: 20px;
    display: flex;
    flex-direction: column;
@@ -11,6 +11,11 @@ export const ModalWindowStyled = styled.div`
    border-radius: 8px;
    background: ${({ theme }) => theme.themeColor.modalBackground};
    transition: .3s;
+   
+   @media (max-width: 800px) {
+     width: 95%;
+     height: 90vh;
+   }
 
    @keyframes shadowFly {
       0%{ transform: translateY(-150%)}

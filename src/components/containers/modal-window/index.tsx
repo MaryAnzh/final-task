@@ -14,8 +14,6 @@ type ModalWindowType = {
 export const ModalWindow = (props: ModalWindowType) => {
 
     const style = {
-        maxWidth: `${props.width}px`,
-        minHeight: `${props.hight}px`,
         transform: `translateY(${props.isModalOpen ? '0%' : '-150%'})`,
     }
 

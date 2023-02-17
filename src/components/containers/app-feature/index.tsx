@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router';
 import { en } from '../../../data/locales/en';
 import { ru } from '../../../data/locales/ru';
-import { AppFeatureStyled, AppFeatureTitle } from './styled';
 import { Carousel } from '@/components/smart/carousel';
+import { CarouselVertical } from '@/components/smart/carousel-vertical';
+import { AppFeatureStyled, AppFeatureTitle } from './styled';
 
 export const AppFeature = () => {
     const router = useRouter();
@@ -14,6 +15,7 @@ export const AppFeature = () => {
                 {t.APP_FEAT}
             </AppFeatureTitle>
             <Carousel />
+            <CarouselVertical />
         </AppFeatureStyled>
     );
 }

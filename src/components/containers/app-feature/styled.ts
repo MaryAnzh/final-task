@@ -12,5 +12,4 @@ export const AppFeatureTitle = styled.h2`
   font-family: ${({ theme }) => theme.titleFamily};
   font-weight: 400;
   color: ${({ theme }) => theme.themeColor.font};
-
 `;
