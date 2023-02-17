@@ -15,6 +15,7 @@ export const TeamAnimationBlockWrap = styled.div`
     transition: 0.3s ease transform;
     background: ${({ theme }) => theme.themeColor.cardBackground};
     cursor: pointer;
+    padding: 20px 0;
      
     h3 {
         position: absolute;
