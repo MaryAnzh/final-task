@@ -1,7 +1,16 @@
 import styled from 'styled-components';
 
+
 export const Container = styled.div`
   position: relative;
+`;
+
+export const P = styled.p`
+  position: absolute;
+  font-size: 1.5em;
+  color: ${({ theme }) => theme.variable.contrastRedLight};
+  top: 2px;
+  left: -15px;
 `;
 
 export const Input = styled.input`

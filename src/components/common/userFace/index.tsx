@@ -13,11 +13,13 @@ const UserFace: FC<IUserFace> = ({ href, name }) => {
   };
   /* eslint-disable */
   useEffect(() => {
-    fetch(href).then((res) => {
-      if (!res.ok) {
-        onError();
-      }
-    });
+    fetch(href)
+      .then((res) => {
+        if (!res.ok) {
+          onError();
+        }
+      })
+      .catch((e) => console.log(e));
   }, []);
   /* eslint-enable */
   return (

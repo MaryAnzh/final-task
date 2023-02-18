@@ -1,6 +1,6 @@
 interface IFeedback {
   _id: string;
-  avatar: string;
+  image: string;
   owner: string;
   content: string;
 }

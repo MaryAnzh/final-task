@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 
+
 export const Title = styled.h1`
   font-size: 2em;
   text-align: center;
   color: ${({ theme }) => theme.variable.contrastRedLight};
 `;
+
+export const ErrorText = styled.p`
+  color: ${({ theme }) => theme.variable.contrastRedLight};
+  font-size: 1em;
+`;
+
+
 export const Form = styled.form`
   max-width: 400px;
+  margin: 20px 0;
   width: 100vw;
   border: 1px solid black;
   border-color: ${({ theme }) => theme.variable.mainLight};

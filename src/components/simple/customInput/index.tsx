@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import { Container, ErrorMessage, Input } from './styled';
+import { Container, ErrorMessage, Input, P } from './styled';
 
 interface CustomInput {
   type: string;
@@ -11,6 +11,7 @@ interface CustomInput {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   err: string;
   valid: boolean;
+  isNecessarily?: boolean;
 }
 
 const CustomInput: FC<CustomInput> = ({
@@ -22,6 +23,7 @@ const CustomInput: FC<CustomInput> = ({
   onChange,
   err,
   valid,
+  isNecessarily = true,
 }) => {
   return (
     <Container>
@@ -33,6 +35,7 @@ const CustomInput: FC<CustomInput> = ({
         placeholder={placeholder}
         onChange={onChange}
       />
+      {isNecessarily && <P>*</P>}
       {!valid && <ErrorMessage>{err}</ErrorMessage>}
     </Container>
   );
