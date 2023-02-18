@@ -32,4 +32,17 @@ export const TeamsBackground = styled.div`
     background-image: url(https://raw.githubusercontent.com/MaryAnzh/final-task-assets/main/img/bg.png);
     background-size: 100%;
    }
+
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;

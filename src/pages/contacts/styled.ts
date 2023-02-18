@@ -14,6 +14,19 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: flex-start;
+
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
 
 export const AllocationTitle = styled.h2`
@@ -25,4 +38,17 @@ export const AllocationTitle = styled.h2`
   text-align: left;
   margin-bottom: 15px;
   margin-top: 10px;
+
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `

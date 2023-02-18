@@ -9,6 +9,19 @@ export const ArticleWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const ArticleInfo = styled.article`

@@ -28,6 +28,19 @@ export const Form = styled.form`
       color: ${({ theme }) => theme.variable.mainDark2};
     }
   }
+
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 export const Input = styled.input`
   width: 100%;

@@ -4,6 +4,19 @@ export const ContactsDescriptionWrapper = styled.section`
   background: ${({ theme }) => theme.themeColor.contacts.descriptionSectionBackground};
   width: 100% !important;
   padding: 80px 0;
+
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
 export const ContactsContent = styled.div`
   background: ${({ theme }) => theme.themeColor.contacts.descriptionSectionBackground};
@@ -14,6 +27,19 @@ export const ContactsContent = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
 
 export const ContactsDescriptionTitle = styled.h1`

@@ -15,4 +15,17 @@ export const MainStyled = styled.main`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-name: smoothAppear;
+  
+  @keyframes smoothAppear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
