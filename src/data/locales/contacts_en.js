@@ -28,5 +28,7 @@ export const contacts_en = {
             NAME: 'Free vacancy (Our future colleague)',
             JOB: 'JavaScript Developer'
         }
-    }
+    },
+
+    ALLOCATION_TITLE: 'Where we are located'
 }

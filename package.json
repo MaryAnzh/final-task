@@ -8,6 +8,17 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "contributors": [
+    {
+      "name": "Maryia Vashchayeva"
+    },
+    {
+      "name": "Dmitry Baranov"
+    },
+    {
+      "name": "Nikita Skutski"
+    }
+  ],
   "dependencies": {
     "@next/font": "13.1.6",
     "@types/node": "18.11.18",

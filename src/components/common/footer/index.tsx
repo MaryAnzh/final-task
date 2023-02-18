@@ -73,7 +73,7 @@ const Footer = (): JSX.Element => (
                         <SecondRowRightPartColTitle>Quick links</SecondRowRightPartColTitle>
                         {
                             navList.map((route: string): JSX.Element => (
-                                <Link href={route} key={route} className="nav-item">{route}</Link>
+                                <Link href={route !== 'about' ? route : '/'} key={route} className="nav-item">{route}</Link>
                             ))
                         }
                     </SecondRowRightPartCol>

@@ -72,7 +72,8 @@ export const theme: ITheme = {
             descriptionSectionTextColor: variable.contrastYellowLight2,
             descriptionSectionBackground: variable.mainDark2,
             photosOverlay: variable.contrastYellow,
-            photoText: variable.secondaryDark2
+            photoText: variable.secondaryDark2,
+            allocationTitleText: variable.secondaryDark2
         }
 
     },
