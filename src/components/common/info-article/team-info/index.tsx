@@ -25,9 +25,6 @@ export const TeamInfoArticle = () => {
                     </ArticleTextP>
                 </ArticleText>
             </ArticleInfo>
-            <ArticleButtonWrap>
-                <LinkButton>{t.MORE}</LinkButton>
-            </ArticleButtonWrap>
 
         </ArticleWrap>
     );

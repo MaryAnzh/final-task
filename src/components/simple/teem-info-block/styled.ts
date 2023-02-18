@@ -6,17 +6,21 @@ export const TeamInfoWrap = styled.article`
     min-height: 300px;
     height: fit-content;
     padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-image: url(img/team-info.png);
+    background-image: url(https://raw.githubusercontent.com/MaryAnzh/final-task-assets/main/img/team-info.png);
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: center;
     background-size: 48%;
-    margin-bottom: 30px;
     line-height: 1.6;
     
+    @media (max-width: 760px) {
+        background: none;
+    }
 `;
 
 export const AboutTeamWorkTitle = styled.h3`
@@ -26,6 +30,11 @@ export const AboutTeamWorkTitle = styled.h3`
     font-family: ${({theme}) => theme.titleFamily};
     font-weight: 600;
     color: ${({theme}) => theme.themeColor.font};
+
+    @media (max-width: 800ypx) {
+        max-width: 100%;
+        width: 100%;
+    }
 `;
 
 export const AboutTeamWorkText = styled.p`
@@ -34,5 +43,9 @@ export const AboutTeamWorkText = styled.p`
 
     &::first-letter {
         padding-left: 10px;
+    }
+    @media (max-width: 760px) {
+        max-width: 100%;
+        width: 100%;
     }
 `;

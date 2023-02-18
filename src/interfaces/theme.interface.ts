@@ -55,6 +55,11 @@ export interface IThemeColor {
     buttonTextColor: string,
     buttonHover: string,
     buttonActive: string,
+    cardBackground: string,
+    cardFontColor: string,
+    modalBackground: string,
+    closeButtonBackground: string,
+    closeButtonHover: string,
 }
 
 export interface ISize {
