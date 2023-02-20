@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 
 import CustomInput from '@/components/simple/customInput';
 import LockSVG from '@/components/simple/lockSVG';
@@ -28,7 +28,7 @@ import validEmail from '@/utils/validEmail';
 import validPass from '@/utils/validPass';
 import validateURL from '@/utils/validUrl';
 
-import { Button, Form, Title } from '../loginForm/styled';
+import { Button, ErrorText, Form, Title } from '../loginForm/styled';
 
 const AuthForm = () => {
   const initialValue: IUser = {
@@ -40,11 +40,13 @@ const AuthForm = () => {
   const { values, handleChange, setValues } = useForm<IUser>(initialValue);
   const { email, password, name, image } = values;
   const [state, dispatch] = useStore();
+  const [error, setError] = useState('');
   const router = useRouter();
 
   const clickToSignUpUser = async (e: FormEvent) => {
     dispatch(userRequestCreator());
     try {
+      setError('');
       e.preventDefault();
       const user = await UserApi.register(values);
       // setCookie(null, "rtoken", token, {
@@ -56,6 +58,7 @@ const AuthForm = () => {
     } catch (e) {
       dispatch(userFailCreator());
       console.log(`Регистрация не удалась: ${e}`);
+      setError(`Регистрация не удалась: ${e}`);
     }
   };
 
@@ -91,6 +94,7 @@ const AuthForm = () => {
         value={image}
         err={t.VALID_E_MAIL}
         valid={validateURL(image)}
+        isNecessarily={false}
       />
       <CustomInput
         svg={<LockSVG />}
@@ -128,6 +132,7 @@ const AuthForm = () => {
       <p>
         {t.TEXT} <Link href={RoutingEnum.login}>{t.SIGN_IN}</Link>
       </p>
+      {error && <ErrorText>{error}</ErrorText>}
     </Form>
   );
 };
