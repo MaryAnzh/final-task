@@ -1,24 +1,31 @@
-import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
+
+import { LoginWrap } from '@/components/simple/login';
+import LoginOut from '@/components/simple/loginout';
+import { LogoSVG } from '@/components/simple/logoSVG';
+import { Locales } from '@/components/smart/locales';
+import { Nav } from '@/components/smart/nav';
+
+import { useStore } from '@/context';
+import { TStore } from '@/context/interfaces';
+
+import { RoutingEnum } from '@/data/constants/routing';
+
 import { en } from '../../../data/locales/en';
 import { ru } from '../../../data/locales/ru';
-import { RoutingEnum } from '@/data/constants/routing';
-import { LoginWrap } from '@/components/simple/login';
-import { LogoSVG } from '@/components/simple/logoSVG';
-import { Nav } from '@/components/smart/nav';
-import { Locales } from '@/components/smart/locales';
+import UserFace from '../userFace';
 import {
   HeaderStyled,
   HeaderWrap,
   LeftHeaderWrap,
   RightHeaderWrap,
 } from './styled';
-import { useStore } from '@/context';
-import LoginOut from '@/components/simple/loginout';
 
 export const Header = () => {
   const [state] = useStore();
+  const { data, authorization } = state;
   const router = useRouter();
   const t = router.locale === 'en' ? en : ru;
   return (
@@ -30,9 +37,15 @@ export const Header = () => {
           </Link>
           <Nav />
         </LeftHeaderWrap>
+        {authorization && (
+          <UserFace
+            href={(data as TStore).image as string}
+            name={(data as TStore).name as string}
+          />
+        )}
 
         <RightHeaderWrap>
-          {state.authorization ? (
+          {authorization ? (
             <>
               <LoginOut />
               <Locales />
