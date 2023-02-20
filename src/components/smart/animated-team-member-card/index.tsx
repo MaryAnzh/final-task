@@ -1,6 +1,5 @@
-import Image from "next/image"
-import { StaticImageData } from "next/image";
-import { TeamAnimationBlockWrap } from "./styled";
+import Image, { StaticImageData } from 'next/image'
+import { TeamAnimationBlockWrap } from './styled';
 
 type AnimatedTeamMemberCardProps = {
     name: string,
@@ -16,7 +15,7 @@ export const AnimatedTeamMemberCard = (props: AnimatedTeamMemberCardProps) => {
             <figure>
                 <Image
                     src={props.photo}
-                    alt="img"
+                    alt='img'
                     width={90}
                     height={90}
                 />

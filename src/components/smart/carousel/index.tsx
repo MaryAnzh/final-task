@@ -7,7 +7,7 @@ import {
     CarouselCard,
     CarouselCardBackFace,
     CarouselBodyWrap
-} from "./styled";
+} from './styled';
 
 export const Carousel = () => {
     const [rotate, setRotate] = useState(0);

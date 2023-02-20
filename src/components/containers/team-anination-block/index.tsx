@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 import { en } from '../../../data/locales/en';
 import { ru } from '../../../data/locales/ru';
-import { AnimatedTeamMemberCard } from "@/components/smart/animated-team-member-card";
+import { AnimatedTeamMemberCard } from '@/components/smart/animated-team-member-card';
 import masha from '@/assets/img/masha.jpg';
 import dima from '@/assets/photo/dima.png';
 import nikita from '@/assets/photo/nikita.png';
 
-import { TeamAnimationBlockWrap } from "./styled";
+import { TeamAnimationBlockWrap } from './styled';
 import { StaticImageData } from 'next/image';
 
 export const TeamAnimationBlock = () => {

@@ -6,7 +6,7 @@ import { ru } from '@/data/locales/ru'
 import { AnimationBlock } from '@/components/smart/animation-block'
 import { TeamInfoArticle } from '@/components/common/info-article/team-info'
 import { TeamInfoBlock } from '@/components/simple/teem-info-block'
-import { AboutPageWrap, TeamsBackground } from './styled'
+import { AboutPageWrap, TeamsBackground } from '@/styles/styled'
 
 import Feedbacks from '@/components/feedbacks'
 import { TeamAnimationBlock } from '@/components/containers/team-anination-block'

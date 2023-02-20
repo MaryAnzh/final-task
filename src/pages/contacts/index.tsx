@@ -7,7 +7,7 @@ import { contacts_en as en } from '@/data/locales/contacts_en';
 import { contacts_ru as ru } from '@/data/locales/contacts_ru';
 
 import { ContactProfile } from '@/interfaces/contactsPersonData';
-import {AllocationTitle, ContactsPage, Container} from './styled'
+import {AllocationTitle, ContactsPage, Container} from '@/styles/page/styled'
 
 export default function Contacts() {
   const router = useRouter();

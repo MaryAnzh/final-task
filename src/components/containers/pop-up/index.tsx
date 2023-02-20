@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ModalWindow } from "../modal-window";
-import { PopUpStyled } from "./styled";
+import { ModalWindow } from '../modal-window';
+import { PopUpStyled } from './styled';
 
 type PopUpType = {
     isOpen: boolean,
@@ -10,7 +10,7 @@ type PopUpType = {
 export const PopUp = (props: PopUpType) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const style = {
-        animation: `toShow 0.5s forwards`,
+        animation: 'toShow 0.5s forwards',
     }
 
     const onAnimationEnd = () => {

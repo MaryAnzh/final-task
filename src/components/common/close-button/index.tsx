@@ -1,4 +1,4 @@
-import { CloseButtonStyled } from "./styled";
+import { CloseButtonStyled } from './styled';
 
 type CloseButtonType = {
     callback: () => void,

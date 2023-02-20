@@ -1,5 +1,4 @@
-import { Share_Tech } from "@next/font/google";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const CarouselVerticalWrap = styled.div`
   width: 100%;

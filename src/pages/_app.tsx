@@ -7,7 +7,6 @@ import { Layout } from '@/components/layout/layout';
 
 import { StoreProvider } from '@/context';
 
-import { GlobalStyle } from '@/styles/global';
 import '@/styles/globals.scss';
 import { lightTheme } from '@/styles/theme';
 
@@ -22,7 +21,6 @@ export default function App({
       <SessionProvider session={session}>
         <StoreProvider>
           <Layout>
-            <GlobalStyle />
             <Component {...pageProps} />
           </Layout>
         </StoreProvider>
