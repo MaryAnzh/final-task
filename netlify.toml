@@ -4,11 +4,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  
-  [[redirects]]
-  from = "/"
-  to = "/ru"
-  status = 301
-  force = false
-  query = {path = "/"}
-  conditions = {Language = ["en","ru"], Country = ["US"]}

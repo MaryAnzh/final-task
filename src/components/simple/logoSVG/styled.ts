@@ -32,8 +32,9 @@ cursor: pointer;
         }
 
         circle:nth-child(4) {
-            animation: logo-jump-up 0.6s infinite;
+            animation: logo-jump-up 0.8s infinite;        
         }
+        
         circle:nth-child(5) {
             animation: logo-jump-down 0.8s 0.3s infinite;
         }
