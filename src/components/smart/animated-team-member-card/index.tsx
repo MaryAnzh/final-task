@@ -8,16 +8,20 @@ type AnimatedTeamMemberCardProps = {
 }
 
 export const AnimatedTeamMemberCard = (props: AnimatedTeamMemberCardProps) => {
-
+    let photo = '/masha.jpg';
+    if (props.photo === '2') {
+        photo = '/nikita.png'
+     }
+     if (props.photo === '3') {
+        photo = '/dima.png'
+     }
     return (
         <TeamAnimationBlockWrap>
             <h3>{props.name}</h3>
             <figure>
-                <Image
-                    src={props.photo}
+                <img
+                    src={photo}
                     alt='img'
-                    width={90}
-                    height={90}
                 />
                 <p>{props.text}</p>
             </figure>

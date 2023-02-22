@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { en } from '../../../data/locales/en';
 import { ru } from '../../../data/locales/ru';
 import { AnimatedTeamMemberCard } from '@/components/smart/animated-team-member-card';
-import masha from '@/assets/img/masha.jpg';
+import masha from '@/assets/photo/masha.jpg';
 import dima from '@/assets/photo/dima.png';
 import nikita from '@/assets/photo/nikita.png';
 
@@ -16,17 +16,17 @@ export const TeamAnimationBlock = () => {
     const teamsList = [1, 2, 3];
     const teamsListElement = teamsList.map((member) => {
         let name = t.TEAM_MASHA_NAME;
-        let photo: StaticImageData | string = masha;
+        let photo: StaticImageData | string = '1';
         let text = t.TEAM_MASHA_INFO;
 
         if (member === 2) {
             name = t.TEAM_NIKITA_NAME;
-            photo = nikita;
+            photo = '2';
             text = t.TEAM_NIKITA_INFO;
         }
         if (member === 3) {
             name = t.TEAM_DIMA_NAME;
-            photo = dima;
+            photo = '3';
             text = t.TEAM_DIMA_INFO;
         }
         return (
