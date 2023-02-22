@@ -27,7 +27,13 @@ const authOptions: NextAuthOptions = {
           password,
           email: username,
         });
-        return { id: user._id, email: user.email, name: user.name, image: user.image,token };
+        return {
+          id: user._id,
+          email: user.email,
+          name: user.name,
+          image: user.image,
+          token,
+        };
       },
     }),
   ],
