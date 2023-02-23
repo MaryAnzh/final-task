@@ -76,7 +76,6 @@ const Feedbacks = () => {
     FeedbackApi.getAllFeedbacks()
       .then(({ data }) => {
         setFeedbacks(data.reverse());
-        console.log(data);
         instanceRef.current?.update();
       })
       .catch((err) => console.log(err));
