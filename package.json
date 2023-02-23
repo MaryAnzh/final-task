@@ -21,6 +21,7 @@
     }
   ],
   "dependencies": {
+    "@netlify/functions": "^1.4.0",
     "@next/font": "13.1.6",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
@@ -32,6 +33,7 @@
     "eslint-config-next": "13.1.6",
     "i18next": "^22.4.9",
     "keen-slider": "^6.8.5",
+    "netlify-identity-widget": "^1.9.2",
     "next": "13.1.6",
     "next-auth": "^4.19.2",
     "next-i18next": "^13.1.4",
@@ -52,6 +54,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/styled-components": "^5.1.26",
+    "netlify-auth-providers": "^1.0.0-alpha5",
     "sass": "^1.57.1"
   }
 }

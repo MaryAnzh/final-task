@@ -1,5 +1,5 @@
 export enum RoutingEnum {
-  baseUrl = 'http://localhost:3000',
+  baseUrl = 'https://our-team-rs-school-task.netlify.app',
   baseUrl2 = 'http://localhost:443',
   serverDeploy = 'https://final-task.ru',
   about = '/',

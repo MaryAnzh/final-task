@@ -68,7 +68,7 @@ export const LoginForm: FC = () => {
   };
 
   const handleGithabSignIn = async () => {
-    await signIn('github', { callbackUrl: RoutingEnum.baseUrl });
+    await signIn('github', { callbackUrl: 'https://our-team-rs-school-task.netlify.app' });
   };
 
   if (state.authorization) {
