@@ -44,7 +44,6 @@ export default function Home() {
       <TeamAnimationBlock />
       <TeamInfoBlock />
       <Feedbacks />
-        <EmailLetter/>
     </AboutPageWrap>
   )
 }
