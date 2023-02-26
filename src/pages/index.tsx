@@ -12,6 +12,7 @@ import Feedbacks from '@/components/feedbacks'
 import { TeamAnimationBlock } from '@/components/containers/team-anination-block'
 import { StarSCG } from '@/components/simple/starSVG'
 import { PopUp } from '@/components/containers/pop-up';
+import {EmailLetter} from '@/components/simple/emailLetter/EmailLetter'
 
 const inter = Inter({ subsets: ['latin'] })
 
