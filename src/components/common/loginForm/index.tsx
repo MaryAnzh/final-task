@@ -39,6 +39,7 @@ export const LoginForm: FC = () => {
   const [error, setError] = useState('');
 
   const clickToSignInUser = async (e: FormEvent) => {
+    console.log('clickToSignInUser');
     try {
       setError('');
       e.preventDefault();
@@ -67,8 +68,13 @@ export const LoginForm: FC = () => {
     }
   };
 
-  const handleGithabSignIn = async () => {
-    await signIn('github', { callbackUrl: 'https://our-team-rs-school-task.netlify.app' });
+  const handleGithabSignIn = async (e: FormEvent) => {
+    e.preventDefault();
+    const url = 'https://our-team-rs-school-task.netlify.app';
+    console.log('url');
+    console.log(url);
+    await signIn('github', { callbackUrl: url });
+    return false;
   };
 
   if (state.authorization) {

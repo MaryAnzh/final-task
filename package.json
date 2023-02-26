@@ -2,6 +2,7 @@
   "name": "final-task",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://our-team-rs-school-task.netlify.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

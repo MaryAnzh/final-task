@@ -12,8 +12,8 @@ const authOptions: NextAuthOptions = {
   // },
   providers: [
     GitProviders({
-      clientId: '15a4916064ee2e32aeef',
-      clientSecret: '04e6eb8200ffdddc5f2e4641959a314c46479f35',
+      clientId: 'ccf83745a93ac9ad5855',
+      clientSecret: '6289380f25a07220a7aaed51ca24a0812f5f59b5',
     }),
     CredentialsProvider({
       type: 'credentials',
