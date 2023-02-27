@@ -1,0 +1,27 @@
+body {
+  overflow-x: hidden;
+  background-color: #EEE;
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+
+  --scroll-background: #f1f1f1;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scroll-background);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #495A7D;
+  border-radius: 20px;
+  border: 4px solid var(--scroll-background);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  border-width: 3px;
+}

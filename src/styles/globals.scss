@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+@import './utile/reset';
+@import './utile/animation';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+body {
+  overflow-y: scroll;
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+  --scroll-background: #FFFFFF;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scroll-background);
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #495A7D;
+  border-radius: 20px;
+  width: 7px;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
+}
