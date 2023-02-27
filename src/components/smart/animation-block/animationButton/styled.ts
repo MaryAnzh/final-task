@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const AnimationButton = styled.button`
-  width: 60px;
-  padding: 5px 10px;
+  padding: 8px 10px;
   border: none;
   border-radius: 4px;
   background: ${({ theme }) => theme.themeColor.header.button};

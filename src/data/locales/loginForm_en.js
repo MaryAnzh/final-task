@@ -1,7 +1,7 @@
 export const loginForm_en = {
   LOGIN: 'Login',
   SIGN_IN: 'Sign In',
-  GIT_SIGN_IN: 'Sign In With GitHab',
+  GIT_SIGN_IN: 'Sign In With GitHub',
   /* eslint-disable */
   TEXT: `Don't have an account?`,
   /* eslint-enable */
