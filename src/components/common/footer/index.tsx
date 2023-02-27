@@ -46,6 +46,7 @@ const Footer = (): JSX.Element => {
 
     const onSendEmailButtonClick = async () => {
         await SendMailApi.sendMail(enteredEmail);
+        setEnteredEmail('');
     }
 
     return (
