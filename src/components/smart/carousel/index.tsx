@@ -18,8 +18,7 @@ import {
 export const Carousel = () => {
     const router = useRouter();
     const t: typeof en | typeof ru = router.locale === 'en' ? en : ru;
-    const tArr = [t.SITE_FEAT_1, t.SITE_FEAT_2, t.SITE_FEAT_3,
-    t.SITE_FEAT_4, t.SITE_FEAT_5, t.SITE_FEAT_6, t.SITE_FEAT_7, t.SITE_FEAT_8];
+    const tArr = [t.SITE_FEAT_1, t.SITE_FEAT_2, t.SITE_FEAT_3, t.SITE_FEAT_4, t.SITE_FEAT_5, t.SITE_FEAT_6, t.SITE_FEAT_7, t.SITE_FEAT_8];
 
     const [rotate, setRotate] = useState(0);
     const rotateAngle = 45;
