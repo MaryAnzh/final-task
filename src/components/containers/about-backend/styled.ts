@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import bg1 from '@/assets/img/woring-1.png';
 import bg2 from '@/assets/img/woring-2.png';
 

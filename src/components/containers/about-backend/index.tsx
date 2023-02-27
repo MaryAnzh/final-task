@@ -2,8 +2,7 @@ import { useRouter } from 'next/router';
 
 import { en } from '../../../data/locales/en';
 import { ru } from '../../../data/locales/ru';
-import { StorageService } from "@/utils/localStorage";
-import { AboutBackEnd, ModalAboutTask, ModalAboutTaskCross, ModalAboutTaskText, WarningWrap } from "./styled";
+import { AboutBackEnd, ModalAboutTask, ModalAboutTaskCross, ModalAboutTaskText, WarningWrap } from './styled';
 
 type AboutBackEndMessageProps = {
     click: () => void,
