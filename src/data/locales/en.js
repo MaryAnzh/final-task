@@ -31,7 +31,7 @@ export const en = {
     ALERT_2: 'Since our back end is homemade, we have small problems with the security certificate, or rather with its purchase )))',
     ALERT_3: 'In order to check the backend, you need to allow your browser to open our backend.',
     ALERT_4: 'It is located at:',
-    ALERT_5: `Backend Repository:`,
+    ALERT_5: 'Backend Repository:',
     ALERT_6: 'Backend running Instruction',
     ALERT_7: '1, Go to your browser console',
     ALERT_8: '2. Click on the link in the error that led to the final-task.ru',
