@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+
+import { en } from '../../../data/locales/en';
+import { ru } from '../../../data/locales/ru';
+
+import { CarouselCardText, CarouselCard } from '../carousel/styled';
 import {
     CarouselVerticalWrap,
     CarouselVerticalButton,
     CarouselVerticalContainer,
     CarouselVerticalBody,
-    CarouselVerticalCard,
-    CarouselVerticalCardBackFace,
     CarouselVerticalBodyWrap,
     CarouselVerticalButtonWrap
 } from './styled';
 
 export const CarouselVertical = () => {
+    const router = useRouter();
+    const t: typeof en | typeof ru = router.locale === 'en' ? en : ru;
+    const tArr = [t.SITE_FEAT_1, t.SITE_FEAT_2, t.SITE_FEAT_3,
+    t.SITE_FEAT_4, t.SITE_FEAT_5, t.SITE_FEAT_6, t.SITE_FEAT_7, t.SITE_FEAT_8];
+    
     const [rotate, setRotate] = useState(0);
     const rotateAngle = 45;
 
@@ -20,11 +29,11 @@ export const CarouselVertical = () => {
 
     const cardList = [1, 2, 3, 4, 5, 6, 7, 8].map((el, i) => {
         return (
-            <CarouselVerticalCard
+            <CarouselCard
                 key={el}
                 style={{ transform: `rotateX(${45 * i}deg) translateZ(200px)` }}>
-                {el}
-            </CarouselVerticalCard>
+              <CarouselCardText>{tArr[i]}</CarouselCardText>
+            </CarouselCard>
         );
     });
 
