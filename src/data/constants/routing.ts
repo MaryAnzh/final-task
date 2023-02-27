@@ -6,4 +6,6 @@ export enum RoutingEnum {
   contacts = '/contacts',
   login = '/login',
   authorization = '/authorization',
+
+  sendMail = '/sendmail'
 }

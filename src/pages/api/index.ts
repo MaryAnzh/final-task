@@ -53,3 +53,9 @@ export const FeedbackApi = {
     return res;
   },
 };
+
+export const SendMailApi = {
+  async sendMail(email: string): Promise<void> {
+    await instance.post<any>(RoutingEnum.sendMail, {to: email});
+  }
+};
