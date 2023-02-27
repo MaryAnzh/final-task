@@ -53,36 +53,6 @@ export const CarouselVerticalBody = styled.div`
     }
 `;
 
-export const CarouselVerticalCard = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backface-visibility: hidden;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    border-radius: 8px;
-    background: ${({ theme }) => theme.themeColor.modalBackground};
-    z-index: 11;
-`;
-
-export const CarouselVerticalCardBackFace = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backface-visibility: visible;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    border-radius: 8px;
-    background: ${({ theme }) => theme.variable.mainDark};
-    z-index: 10;
-`;
-
 export const CarouselVerticalButtonWrap = styled.div`
   width: 160px;
   display: flex;

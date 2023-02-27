@@ -19,4 +19,12 @@ export const en = {
     TEAM_NIKITA_INFO: 'Active, executive, inquisitive. Always has its own vision of the problem that stands for. Implemented contacts page, footer',
     TEAM_DIMA_INFO: 'Responsible, executive, If there is a problem, then it will definitely solve it. Implemented application backend (authorization, feedbacks), login forms, feedbacks slider',
     APP_FEAT: 'Capabilities of our application',
+    SITE_FEAT_1: 'Registration and authorization, including through GitHub',
+    SITE_FEAT_2: 'You can leave us a feedback and see it on our website',
+    SITE_FEAT_3: 'The ability to send yourself a letter layout in the site style',
+    SITE_FEAT_4: 'Find out about us',
+    SITE_FEAT_5: 'See our location on an integrated map',
+    SITE_FEAT_6: 'Check server requests in Postman (examples in ReadMe develop branch)',
+    SITE_FEAT_7: 'Change Site Language',
+    SITE_FEAT_8: '',
 };

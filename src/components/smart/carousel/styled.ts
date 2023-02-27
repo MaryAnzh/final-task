@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import leafs from '@/assets/img/leafs.png';
+import team from '@/assets/img/team-info.png';
 
 export const CarouselWrap = styled.div`
   width: 100%;
@@ -8,7 +10,6 @@ export const CarouselWrap = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  
   @media (max-width: 800px) {
     display: none;
   }
@@ -21,7 +22,7 @@ export const CarouselContainer = styled.div`
   align-items: center;
   justify-content: center;
   mask-image: linear-gradient(to left, transparent 0%, black 30%, black 70%, transparent 100%);
-  background: ${({theme}) => theme.themeColor.cardBackground};
+  background: ${({ theme }) => theme.themeColor.cardBackground};
 `;
 
 export const CarouselBodyWrap = styled.div`
@@ -62,6 +63,7 @@ export const CarouselCard = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,8 +71,29 @@ export const CarouselCard = styled.div`
     transform-origin: center;
     transform-style: preserve-3d;
     border-radius: 8px;
-    background: ${({ theme }) => theme.themeColor.modalBackground};
+    background-color: ${({ theme }) => theme.themeColor.modalBackground};
+    background-image: url(${leafs.src});
+    background-position-y: bottom;
+    background-position-x: right;
+    background-size: 30%;
+    background-repeat: no-repeat;
     z-index: 11;
+    
+    &:nth-last-child(1) {
+      background-image: url(${team.src}), url(${leafs.src});
+      background-position-y: 40%, bottom;
+      background-position-x: center, right;
+      background-size: 80%, 30%;
+      background-repeat: no-repeat;
+    }
+`;
+
+export const CarouselCardText = styled.p`
+    color: ${({ theme }) => theme.themeColor.color};;
+    
+    &::first-letter {
+      padding-left: 10px;
+    }
 `;
 
 export const CarouselCardBackFace = styled.div`
