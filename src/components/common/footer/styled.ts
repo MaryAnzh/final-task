@@ -117,19 +117,25 @@ export const FirstRowButton = styled.button`
   border: none;
   font-size: 15px;
   padding: 0 20px;
+  font-weight: 600;
   
   transition: all 0.3s;
   background-position: center center;
   border-radius: 5px;
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.3);
   
-  &:hover {
+  &:not(:disabled):hover {
     cursor: pointer;
   }
-  
-  &:active {
+
+  &:not(:disabled):active {
     transform: scale(0.9);
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:disabled {
+    opacity: 0.2;
+    cursor: default;
   }
 `;
 
