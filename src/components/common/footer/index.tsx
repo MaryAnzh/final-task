@@ -24,6 +24,8 @@ import {
     SecondRowRightPart,
     SecondRowRightPartCol,
     SecondRowRightPartColTitle,
+    PopUpWrapper,
+    Alert
 
 } from './styled'
 import {SendMailApi} from '@/pages/api'
@@ -32,21 +34,33 @@ import {footer_en as en} from '@/data/locales/footer_en'
 import {footer_ru as ru} from '@/data/locales/footer_ru'
 
 
-const navList = ['about', 'contacts', 'authorization'];
+const navList = ['about', 'contacts', 'authorization']
 
 const Footer = (): JSX.Element => {
-    const router = useRouter();
-    const t = router.locale === 'en' ? en : ru;
+    const router = useRouter()
+    const t = router.locale === 'en' ? en : ru
 
-
-    const [enteredEmail, setEnteredEmail] = React.useState<string>('');
+    const [isAlertShown, setIsAlertShown] = React.useState<boolean>(false)
+    const [enteredEmail, setEnteredEmail] = React.useState<string>('')
+    const [emailSentStatus, setEmailSentStatus] = React.useState<string>('')
     const onEmailInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        setEnteredEmail(event.currentTarget.value);
+        setEnteredEmail(event.currentTarget.value)
     }
 
     const onSendEmailButtonClick = async () => {
-        await SendMailApi.sendMail(enteredEmail);
-        setEnteredEmail('');
+        const serverResponse: string = (await SendMailApi.sendMail(enteredEmail)).payload
+        setEmailSentStatus(serverResponse)
+
+        setEnteredEmail('')
+        setIsAlertShown(true)
+        const timerId: number = window.setTimeout((): void => {
+            setIsAlertShown(false)
+            window.clearTimeout(timerId)
+        }, 7000)
+    }
+
+    const onAlertBackgroundClick = (event: React.MouseEvent<HTMLDivElement>): void => {
+        event.currentTarget === event.currentTarget && setIsAlertShown(false)
     }
 
     return (
@@ -59,8 +73,10 @@ const Footer = (): JSX.Element => {
                     </FirstRowLeft>
 
                     <FirstRowInputGroup>
-                        <FirstRowInput type="email" placeholder={t.PLACEHOLDER} value={enteredEmail} onChange={onEmailInputChange}/>
-                        <FirstRowButton disabled={!isEmail(enteredEmail)} onClick={onSendEmailButtonClick}>{t.BUTTON}</FirstRowButton>
+                        <FirstRowInput type="email" placeholder={t.PLACEHOLDER} value={enteredEmail}
+                                       onChange={onEmailInputChange}/>
+                        <FirstRowButton disabled={!isEmail(enteredEmail)}
+                                        onClick={onSendEmailButtonClick}>{t.BUTTON}</FirstRowButton>
                     </FirstRowInputGroup>
 
                 </FirstRow>
@@ -81,7 +97,7 @@ const Footer = (): JSX.Element => {
 
                         <SecondRowSocials>
                             <SecondRowSocial href="https://github.com/MaryAnzh/final-task" target="_blank">
-                                <SecondRowSocialImage src="/github.png" />
+                                <SecondRowSocialImage src="/github.png"/>
                             </SecondRowSocial>
                         </SecondRowSocials>
                     </SecondRowLeftPart>
@@ -91,7 +107,8 @@ const Footer = (): JSX.Element => {
                             <SecondRowRightPartColTitle>{t.LINKS.QUICK}</SecondRowRightPartColTitle>
                             {
                                 navList.map((route: string): JSX.Element => (
-                                    <Link href={route !== 'about' ? route : '/'} key={route} className="nav-item">{route}</Link>
+                                    <Link href={route !== 'about' ? route : '/'} key={route}
+                                          className="nav-item">{route}</Link>
                                 ))
                             }
                         </SecondRowRightPartCol>
@@ -114,6 +131,15 @@ const Footer = (): JSX.Element => {
                     <ThirdRowCopyright>{t.COPYRIGHT}</ThirdRowCopyright>
                 </ThirdRow>
             </FooterContainer>
+
+            {isAlertShown &&
+                (<PopUpWrapper onClick={onAlertBackgroundClick}>
+                    <Alert open>
+                        {t.EMAIL_SENT}
+                        <br/>
+                        <span>{emailSentStatus}</span>
+                    </Alert>
+                </PopUpWrapper>)}
         </FooterStyled>
     )
 }

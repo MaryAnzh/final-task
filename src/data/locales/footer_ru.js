@@ -9,5 +9,6 @@ export const footer_ru = {
         SERVICE: 'COMING SOON',
         CONTACT: 'COMING SOON'
     },
-    COPYRIGHT: 'Копирайт 2023 | Все права защищены'
+    COPYRIGHT: 'Копирайт 2023 | Все права защищены',
+    EMAIL_SENT: 'По идее, email отправлен. Проверьте вашу почту. \n Сервер ответил статусом: '
 };

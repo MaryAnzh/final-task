@@ -257,3 +257,54 @@ export const ThirdRowCopyright = styled.span`
   font-size: 12px;
   font-family: ${({ theme }) => theme.fontFamily};
 `;
+
+export const PopUpWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const Alert = styled.dialog`
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 100%;
+  margin: auto;
+  background-color: ${({ theme }) => theme.themeColor.footer.modalBackground};
+  font-family: ${({theme}) => theme.fontFamily};
+  color: ${({ theme }) => theme.themeColor.footer.inputTextColor};
+  font-size: 20px;
+  
+  animation-name: modalAppears;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  
+  span {
+    font-size: 12px;
+    font-style: italic;
+    font-family: ${({theme}) => theme.fontFamily};
+    color: ${({ theme }) => theme.themeColor.footer.inputTextColor};
+  }
+  
+  @keyframes modalAppears {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+`
