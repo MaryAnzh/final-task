@@ -23,6 +23,7 @@ const variable: IColor = {
     contrastYellowLight2: '#FEF9F3',
     contrastYellowDark: '#BBA993',
     contrastYellowDark2: '#7D7162',
+    white: '#FFF'
 };
 
 export const theme: ITheme = {
@@ -67,11 +68,12 @@ export const theme: ITheme = {
             background: variable.mainDark2,
             inputBackground: variable.mainLight2,
             inputTextColor: variable.secondaryDark2,
-            buttonBackground: variable.contrastYellowLight2,
+            buttonBackground: variable.white,
             textColor: variable.contrastYellowLight2,
             hrColor: 'rgba(0, 0, 0, 0.2)',
             buttonColor: variable.secondaryDark2,
-            black: variable.secondaryDark2
+            black: variable.secondaryDark2,
+            modalBackground: variable.contrastYellowLight2
         },
         contacts: {
             descriptionSectionTextColor: variable.contrastYellowLight2,

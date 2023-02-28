@@ -41,6 +41,8 @@ export interface IColor {
     contrastYellowLight2: string,
     contrastYellowDark: string,
     contrastYellowDark2: string,
+
+    white: string,
 }
 
 export interface IThemeColor {
