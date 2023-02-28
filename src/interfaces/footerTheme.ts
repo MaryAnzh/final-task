@@ -7,4 +7,5 @@ export interface IFooterTheme {
     textColor: string
     hrColor: string
     black: string
+    modalBackground: string
 }

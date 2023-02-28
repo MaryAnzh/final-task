@@ -9,5 +9,6 @@ export const footer_en = {
         SERVICE: 'COMING SOON',
         CONTACT: 'COMING SOON'
     },
-    COPYRIGHT: 'Copyright © 2023 | All rights reserved'
+    COPYRIGHT: 'Copyright © 2023 | All rights reserved',
+    EMAIL_SENT: 'Email seems to be sent. Check your inbox. \n Server responded with text: '
 };
